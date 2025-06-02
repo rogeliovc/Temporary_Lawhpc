@@ -10,9 +10,25 @@
             line-height: 1.6;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 100px 40px 40px;
+            padding: 100px 0 40px;
             color: #333;
             background-color: #f8f9fa;
+        }
+        
+        .banner {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .banner-img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
         header {
             background-color: #1a1a1a;
@@ -79,7 +95,9 @@
             color: #2c3e50;
         }
         .container {
-            padding: 0 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 40px;
         }
         .github-link {
             display: inline-block;
@@ -120,6 +138,10 @@
             </nav>
         </div>
     </header>
+
+    <div class="banner">
+        <img src="banner.png" alt="Latin American Women in HPC - Banner" class="banner-img">
+    </div>
 
     <div class="container">
         <h2>About This Repository</h2>
