@@ -1,0 +1,77 @@
+.tableIntegrantes {
+    width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+    position: relative;
+    max-width: 100%;
+}
+
+.team-table {
+    width: 100%;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 20px 0;
+    white-space: nowrap;
+}
+
+.team-row {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.team-member {
+    display: inline-block;
+    vertical-align: top;
+    width: 250px;
+    margin: 0 10px;
+    padding: 20px;
+    text-align: center;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: normal;
+    flex: 0 0 auto;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.member-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #333;
+}
+
+.team-member h3 {
+    color: #fff;
+    margin: 10px 0 5px;
+    font-size: 1.2em;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .team-table {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .team-member {
+        margin: 10px;
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        width: 100%;
+        max-width: 280px;
+    }
+}

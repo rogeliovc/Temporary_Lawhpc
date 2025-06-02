@@ -111,12 +111,97 @@ h3 {
 
 /* Estilos del footer */
 footer {
-  margin-top: 50px;
-  text-align: center;
-  padding: 20px 0;
-  border-top: 1px solid #333;
-  color: #7f8c8d;
+  background-color: #1a1a1a;
+  padding: 30px 0;
+  color: #ffffff;
   font-size: 0.9em;
+}
+
+.footer-copyright {
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  width: 100%;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+  gap: 30px;
+}
+
+.footer-row:first-child {
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.footer-row:last-child {
+  align-items: center;
+  padding-top: 15px;
+}
+
+.footer-text {
+  margin: 0;
+  color: #ffffff;
+  flex: 1;
+}
+
+/* Estilos para la navegación del footer */
+.footer-nav {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-nav li {
+  padding-left: 280px;
+  white-space: nowrap;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+  display: block;
+  padding: 5px 0;
+}
+
+.footer-nav a:hover {
+  color: #666;
+}
+
+/* Estilos para el recuadro del newsletter */
+.newsletter-box {
+  border: 0.5px solid #ea6af4;
+  padding: 45px 25px;
+  margin: 10px 0;
+  display: inline-block;
+}
+
+.newsletter-box h3 {
+  margin: 0;
+  color: white;
+  font-size: 1.5em;
+  font-family: Montserrat, sans-serif;
 }
 
 /* Responsive Design */
@@ -143,5 +228,37 @@ footer {
     
     .container {
         padding: 0 20px;
+    }
+
+    .footer-content {
+        padding: 20px;
+    }
+
+    .footer-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .footer-nav li {
+        padding-left: 0;
+        margin: 0 10px;
+    }
+
+    .newsletter-box {
+        padding: 20px 15px;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .newsletter-box h3 {
+        font-size: 1.2em;
     }
 }
