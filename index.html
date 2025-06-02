@@ -1,163 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAW HPC - Temporary Repository</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 100px 0 40px;
-            color: #333;
-            background-color: black;
-        }
-        
-        .banner {
-            width: 100%;
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .banner-img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-        header {
-            background-color: #1a1a1a;
-            padding: 10px 0;
-            margin-bottom: 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
-            height: 80px;
-        }
-        
-        .logo {
-            height: 50px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .logo-img {
-            height: 100%;
-            width: auto;
-        }
-        
-        .main-nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        
-        .main-nav li {
-            margin-left: 25px;
-        }
-        
-        .main-nav a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9em;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
-            padding: 5px 10px;
-            border-radius: 3px;
-        }
-        
-        .main-nav a:hover,
-        .main-nav a.active {
-            color: #fff;
-            background-color: #333;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 40px;
-        }
-        .github-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #2c3e50;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        .github-link:hover {
-            background-color: #1a252f;
-        }
-        footer {
-            margin-top: 50px;
-            text-align: center;
-            padding: 20px 0;
-            border-top: 1px solid #eee;
-            color: #7f8c8d;
-            font-size: 0.9em;
-        }
-    </style>
+    <meta name="description" content="Latin American Women in High Performance Computing - Promoviendo la participación de mujeres en HPC">
+    <title>LAW HPC - Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Fuentes de Google si las necesitas -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet"> -->
 </head>
 <body>
     <header>
         <div class="header-content">
             <div class="logo">
-                <img src="logo.png" alt="LAW HPC Logo" class="logo-img">
+                <img src="images/logo.png" alt="LAW HPC Logo" class="logo-img">
             </div>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#" class="active">INICIO</a></li>
-                    <li><a href="#">INTEGRANTES</a></li>
-                    <li><a href="#">CONTACTO</a></li>
-                    <li><a href="#">AGENDA</a></li>
+                    <li><a href="index.html" class="active">INICIO</a></li>
+                    <li><a href="pages/integrantes.html">INTEGRANTES</a></li>
+                    <li><a href="pages/contacto.html">CONTACTO</a></li>
+                    <li><a href="pages/agenda.html">AGENDA</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <div class="banner">
-        <img src="banner.png" alt="Latin American Women in HPC - Banner" class="banner-img">
+        <img src="images/banner.png" alt="Latin American Women in HPC - Banner" class="banner-img">
     </div>
 
-    <div class="container">
-        <h2>About This Repository</h2>
-        <p>This is a temporary repository for LAW HPC project. You can find more information and access the source code by visiting the GitHub repository.</p>
-        
-        <a href="https://github.com/rogeliovc/Temporary_Lawhpc" class="github-link" target="_blank">
-            View on GitHub
-        </a>
-        
-        <h2>Getting Started</h2>
-        <p>To clone this repository, use the following command:</p>
-        <pre>git clone https://github.com/rogeliovc/Temporary_Lawhpc.git</pre>
-    </div>
+    <main class="container">
+        <section class="hero">
+            <h1>Bienvenidos a LAW HPC</h1>
+            <p class="lead">Promoviendo la participación de mujeres latinoamericanas en Computación de Alto Rendimiento</p>
+        </section>
+
+        <section class="about">
+            <h2>Sobre Nosotras</h2>
+            <p>LAW HPC es una iniciativa que busca fomentar la participación de mujeres latinoamericanas en el campo de la Computación de Alto Rendimiento (HPC). Nuestro objetivo es crear una red de apoyo, compartir conocimientos y oportunidades en el campo del HPC.</p>
+        </section>
+
+        <section class="cta">
+            <h2>¡Únete a nuestra comunidad!</h2>
+            <p>Visita nuestro repositorio en GitHub para más información sobre nuestros proyectos y cómo participar.</p>
+            <a href="https://github.com/rogeliovc/Temporary_Lawhpc" class="github-link" target="_blank" rel="noopener noreferrer">
+                Ver en GitHub
+            </a>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 LAW HPC Project. All rights reserved.</p>
+        <div class="footer-content">
+            <p>&copy; 2025 LAW HPC. Todos los derechos reservados.</p>
+            <div class="social-links">
+                <!-- Agrega tus enlaces a redes sociales aquí -->
+                <!-- <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a> -->
+            </div>
+        </div>
     </footer>
+    
+    <!-- Scripts al final del body para mejor rendimiento -->
+    <script src="js/main.js" defer></script>
+    <!-- Si necesitas Font Awesome para iconos -->
+    <!-- <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script> -->
 </body>
 </html>
