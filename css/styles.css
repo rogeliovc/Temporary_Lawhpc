@@ -42,6 +42,11 @@ header {
     width: 300%;
 }
 
+.logoImgFooter {
+    height: 250%;
+    width: 400%;
+}
+
 .main-nav ul {
   list-style: none;
   margin: 0;
