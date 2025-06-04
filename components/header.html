@@ -1,0 +1,60 @@
+<header>
+    <div class="header-content">
+        <div class="logo">
+            <a href="/index.html" aria-label="Inicio">
+                <img src="/images/logo.png" alt="LAW HPC Logo" class="logo-img">
+            </a>
+        </div>
+        <button class="mobile-menu-toggle" aria-label="Menú" aria-expanded="false" aria-controls="main-nav">
+            <span class="sr-only">Menú</span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav id="main-nav" class="main-nav" aria-label="Navegación principal">
+            <ul>
+                <li><a href="/index.html" class="nav-link" data-nav="inicio">INICIO</a></li>
+                <li><a href="/pages/integrantes/integrantes.html" class="nav-link" data-nav="integrantes">INTEGRANTES</a></li>
+                <li><a href="/pages/contacto/contacto.html" class="nav-link" data-nav="contacto">CONTACTO</a></li>
+                <li><a href="/pages/agenda/agenda.html" class="nav-link" data-nav="agenda">AGENDA</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<style>
+    /* Estilos para lectores de pantalla */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+    
+    /* Asegurar que el header esté siempre visible */
+    header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.95);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Ajustar el padding del body para que el contenido no quede oculto detrás del header fijo */
+    body {
+        padding-top: 80px;
+    }
+    
+    @media (max-width: 768px) {
+        body {
+            padding-top: 70px;
+        }
+    }
+</style>
