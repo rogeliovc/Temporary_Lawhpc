@@ -9,25 +9,27 @@ header {
 }
 
 .header-content {
-    max-width: 1200px;
+
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
+    align-items: left   ;
+    padding: 1rem 2rem;
 }
 
-.logo {
-    flex: 0 0 auto;
+/* Estilos del logo */
+.header-content {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre elementos */
+    gap: 10rem; /* Aumenta la separación entre el logo y el menú */
 }
 
-.logo-img {
-    height: 50px;
+.logoImgHeader {
+    height: 150px;
     width: auto;
-    transition: opacity 0.3s ease;
 }
 
-.logo-img:hover {
+.logoImgHeader:hover {
     opacity: 0.8;
 }
 
