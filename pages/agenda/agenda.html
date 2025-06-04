@@ -6,96 +6,7 @@
     <meta name="description" content="Agenda de Eventos - LAW HPC - Próximos eventos y actividades">
     <title>LAW HPC - Agenda</title>
     <link rel="stylesheet" href="/css/Globalstyles.css">
-    <style>
-        .events-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
-        }
-        
-        .event-card {
-            background: #1a1a1a;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .event-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        
-        .event-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-        
-        .event-details {
-            padding: 20px;
-        }
-        
-        .event-date {
-            color: #7f8c8d;
-            font-size: 0.9em;
-            margin-bottom: 10px;
-        }
-        
-        .event-title {
-            color: #fff;
-            margin: 10px 0;
-        }
-        
-        .event-description {
-            color: #bdc3c7;
-            margin-bottom: 15px;
-            font-size: 0.95em;
-        }
-        
-        .event-link {
-            display: inline-block;
-            padding: 8px 16px;
-            background: #2c3e50;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-size: 0.9em;
-            transition: background-color 0.3s;
-        }
-        
-        .event-link:hover {
-            background: #1a252f;
-        }
-        
-        .calendar-navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        
-        .month-selector {
-            font-size: 1.5em;
-            font-weight: 500;
-            color: #fff;
-        }
-        
-        .nav-buttons button {
-            background: #2c3e50;
-            border: none;
-            color: white;
-            padding: 8px 16px;
-            margin: 0 5px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .nav-buttons button:hover {
-            background: #1a252f;
-        }
-    </style>
+    <link rel="stylesheet" href="/pages/agenda/agendaStyles.css">
 </head>
 <body>
     <header style="background-color: black !important;">
@@ -115,24 +26,24 @@
     </header>
 
     <main class="container">
-        <section class="agenda-section">
+        <section class="agendaSection">
             <h1>Agenda de Eventos</h1>
             <p class="lead">Próximos eventos y actividades de LAW HPC</p>
             
-            <div class="calendar-navigation">
-                <div class="month-selector">Junio 2025</div>
-                <div class="nav-buttons">
+            <div class="calendarNavigation">
+                <div class="monthSelector">Junio 2025</div>
+                <div class="navButtons">
                     <button id="prevMonth">Anterior</button>
                     <button id="nextMonth">Siguiente</button>
                 </div>
             </div>
             
-            <div class="events-container">
+            <div class="eventsContainer">
                 <!-- Evento 1 -->
-                <div class="event-card">
-                    <img src="../homePage/assets/WiHPC_img.01.png" alt="Taller de HPC" class="event-image">
-                    <div class="event-details">
-                        <div class="event-date">15 Junio 2025 • 10:00 AM</div>
+                <div class="eventCard">
+                    <img src="../homePage/assets/WiHPC_img.01.png" alt="Taller de HPC" class="eventImage">
+                    <div class="eventDetails">
+                        <div class="eventDate">15 Junio 2025 • 10:00 AM</div>
                         <h3 class="event-title">Taller de Introducción a HPC</h3>
                         <p class="event-description">Aprende los conceptos básicos de Computación de Alto Rendimiento en este taller introductorio.</p>
                         <a href="#" class="event-link">Más información</a>
@@ -140,23 +51,23 @@
                 </div>
                 
                 <!-- Evento 2 -->
-                <div class="event-card">
-                    <img src="../homePage/assets/WiHPC_img.02.png" alt="Charla de Mujeres en HPC" class="event-image">
-                    <div class="event-details">
-                        <div class="event-date">22 Junio 2025 • 4:00 PM</div>
-                        <h3 class="event-title">Mujeres Líderes en HPC</h3>
-                        <p class="event-description">Charla con mujeres destacadas en el campo de la Computación de Alto Rendimiento.</p>
+                <div class="eventCard">
+                    <img src="../homePage/assets/WiHPC_img.02.png" alt="Charla de Mujeres en HPC" class="eventImage">
+                    <div class="eventDetails">
+                        <div class="eventDate">22 Junio 2025 • 4:00 PM</div>
+                        <h3 class="eventTitle">Mujeres Líderes en HPC</h3>
+                        <p class="eventDescription">Charla con mujeres destacadas en el campo de la Computación de Alto Rendimiento.</p>
                         <a href="#" class="event-link">Más información</a>
                     </div>
                 </div>
                 
                 <!-- Evento 3 -->
-                <div class="event-card">
-                    <img src="../homePage/assets/WiHPC_img.03.png" alt="Hackathon HPC" class="event-image">
-                    <div class="event-details">
-                        <div class="event-date">30 Junio 2025 • 9:00 AM</div>
-                        <h3 class="event-title">Hackathon de HPC</h3>
-                        <p class="event-description">Participa en nuestro hackathon y desarrolla soluciones innovadoras usando HPC.</p>
+                <div class="eventCard">
+                    <img src="../homePage/assets/WiHPC_img.03.png" alt="Hackathon HPC" class="eventImage">
+                    <div class="eventDetails">
+                        <div class="eventDate">30 Junio 2025 • 9:00 AM</div>
+                        <h3 class="eventTitle">Hackathon de HPC</h3>
+                        <p class="eventDescription">Participa en nuestro hackathon y desarrolla soluciones innovadoras usando HPC.</p>
                         <a href="#" class="event-link">Registrarse</a>
                     </div>
                 </div>
@@ -165,7 +76,7 @@
     </main>
 
     <!-- Footer dinámico con js -->
-    <div id="footer-container"></div>
+    <div id="footerContainer"></div>
     <script src="/js/loadComponents.js"></script>
     
     <script src="/js/main.js"></script>
@@ -175,8 +86,8 @@
             const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
                              "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
             
-            let currentDate = new Date();
-            const monthSelector = document.querySelector('.month-selector');
+            let currentDate = new Date()    ;
+            const monthSelector = document.querySelector('.monthSelector');
             
             if (monthSelector) {
                 function updateMonthDisplay() {

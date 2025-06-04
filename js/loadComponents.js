@@ -80,11 +80,11 @@ async function initializeFooter() {
         // Luego cargar el contenido del footer
         const footerLoaded = await loadComponent(
             `/components/footer.html`,
-            'footer-container'
+            'footerContainer'
         );
         
         // Asegurarse de que los enlaces en el footer usen rutas absolutas
-        const footerLinks = document.querySelectorAll('#footer-container a[href^="../"]');
+        const footerLinks = document.querySelectorAll('#footerContainer a[href^="../"]');
         footerLinks.forEach(link => {
             const absolutePath = link.getAttribute('href').replace(/^\.\.\//, '/');
             link.setAttribute('href', absolutePath);

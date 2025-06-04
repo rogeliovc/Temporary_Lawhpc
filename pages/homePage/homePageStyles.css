@@ -1,0 +1,142 @@
+/* Estilos del banner */
+.banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .bannerImg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Contenido principal */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+  
+  .container h2 {
+    text-align: center;
+    position: relative;
+    display: block;
+    width: 100%;
+    margin: 0 auto 30px;
+    padding-bottom: 10px;
+  }
+  
+  .container h2.sectionTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .sectionTitle::after {
+    content: '';
+    position: relative;
+    width: 10%;
+    height: 4px;
+    background-color: #9c27b0;
+    margin-top: 10px;
+    border-radius: 2px;
+  }
+  
+  .container p {
+    font-size: x-large;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    color: white;
+  }
+  
+  /* Estilos para la sección Acerca de */
+  .aboutSection {
+    background-color: #373434cf;  
+    padding: 40px 0;
+    margin: 40px 0;
+  }
+  
+  .aboutSection .container {
+    background-color: #605d5d92;  
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Estilos para el contenedor del botón */
+  .seeMore {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .seeMoreBtn {
+    background-color: #9c27b0;
+    color: black;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+  }
+  
+  .seeMoreBtn:hover {
+    background-color: #7b1fa2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Estilos para la sección Misión */
+  .mission {
+    background-color: white;  
+    padding: 40px 0;
+    margin: 40px 0;
+  }
+  
+  .mission .container {
+    background-color: white;  
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .missionImages{
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+  .missionImg {
+    height: 400%;
+    width: 100%;
+  }
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    
+    .main-nav {
+        margin-top: 15px;
+    }
+    
+    .main-nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .main-nav li {
+        margin: 5px 10px;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+}
