@@ -1,18 +1,24 @@
 /* Estilos del banner */
 .banner {
     width: 100%;
-    margin: 0;
+    margin: -100px 0 0 0; /* Reducido de 120px a 80px para subir el banner */
     padding: 0;
     background-color: #000;
     display: flex;
     justify-content: center;
     align-items: center;
+    max-height: 80vh; /* Limitar la altura máxima al 60% del viewport */
+    overflow: hidden; /* Asegura que la imagen no se salga del contenedor */
   }
   
   .bannerImg {
     max-width: 100%;
     width: auto;
+    height: auto;
+    max-height: 80vh; /* Mismo valor que el contenedor */
     display: block;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio sin distorsionarse */
+    object-position: center; /* Centra la imagen verticalmente */
   }
   
   /* Contenido principal */

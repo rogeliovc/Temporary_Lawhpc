@@ -83,6 +83,79 @@ function loadStyles(stylePath) {
     });
 }
 
+// Función para controlar el header durante el scroll
+function handleHeaderOnScroll() {
+    const header = document.querySelector('header');
+    if (!header) {
+        console.error('No se encontró el elemento header');
+        return;
+    }
+    
+    let lastScroll = 0;
+    const scrollThreshold = 100; // Píxeles a desplazar antes de que el header se oculte
+    const showThreshold = 20; // Píxeles desde arriba para mostrar el header
+    let ticking = false;
+    
+    function updateHeader() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const isAtTop = currentScroll <= showThreshold;
+        const isScrollingUp = currentScroll < lastScroll;
+        const isScrollingDown = currentScroll > lastScroll;
+        
+        // Mostrar/ocultar fondo según la posición
+        if (currentScroll > 50) {
+            header.classList.add('solid-bg');
+        } else {
+            header.classList.remove('solid-bg');
+            header.classList.remove('hide-header');
+            ticking = false;
+            return;
+        }
+        
+        // Si está en la parte superior, mostrar el header
+        if (isAtTop) {
+            header.classList.remove('hide-header');
+            ticking = false;
+            return;
+        }
+        
+        // Ocultar al hacer scroll hacia abajo
+        if (isScrollingDown && !header.classList.contains('hide-header')) {
+            header.classList.add('hide-header');
+        } 
+        // Mostrar solo cuando se llega a la parte superior
+        // No mostrar automáticamente al hacer scroll hacia arriba
+        
+        lastScroll = currentScroll;
+        ticking = false;
+    }
+    
+    // Manejar el evento de scroll con requestAnimationFrame
+    function onScroll() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateHeader);
+            ticking = true;
+        }
+    }
+    
+    // Agregar el evento de scroll
+    window.addEventListener('scroll', onScroll, { passive: true });
+    
+    // Inicializar el estado del header
+    updateHeader();
+    
+    // Función para verificar si estamos cerca de la parte superior
+    function checkTop() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll <= showThreshold) {
+            header.classList.remove('hide-header');
+        }
+    }
+    
+    // Verificar periódicamente si estamos cerca de la parte superior
+    setInterval(checkTop, 300);
+}
+
 // Función para inicializar el menú móvil
 function initializeMobileMenu() {
     // Esperar un breve momento para asegurar que el DOM esté listo
@@ -215,18 +288,52 @@ async function initializeFooter() {
 }
 
 // Función para inicializar todos los componentes
-async function initializeComponents() {
-    try {
-        await initializeHeader();
-        await initializeFooter();
-    } catch (error) {
-        console.error('❌ Error al inicializar componentes:', error);
-    }
+function initializeComponents() {
+    return new Promise((resolve) => {
+        console.log('🔄 Inicializando componentes...');
+            
+        // Cargar header
+        initializeHeader();
+            
+        // Cargar footer
+        initializeFooter();
+            
+        // Inicializar menú móvil después de cargar el header
+        initializeMobileMenu();
+            
+        // Dar tiempo a que se cargue el header dinámico
+        setTimeout(() => {
+            console.log('✅ Componentes inicializados');
+            resolve();
+        }, 100);
+    });
+}
+
+// Función para inicializar el comportamiento del scroll del header después de cargar los componentes
+function initializeHeaderScroll() {
+    // Esperar un breve momento para asegurar que el header se haya cargado
+    const checkHeader = setInterval(() => {
+        const header = document.querySelector('header');
+        if (header) {
+            clearInterval(checkHeader);
+            console.log('✅ Header encontrado, inicializando scroll...');
+            handleHeaderOnScroll();
+        } else {
+            console.log('⏳ Esperando a que se cargue el header...');
+        }
+    }, 100);
 }
 
 // Cargar componentes cuando el DOM esté completamente cargado
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeComponents);
-} else {
-    initializeComponents();
-}
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('🚀 DOM cargado, inicializando componentes...');
+    
+    // Primero cargar los componentes
+    initializeComponents().then(() => {
+        // Luego inicializar el scroll del header
+        console.log('✅ Componentes cargados, inicializando scroll del header...');
+        initializeHeaderScroll();
+    }).catch(error => {
+        console.error('❌ Error al cargar componentes:', error);
+    });
+});
