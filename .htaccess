@@ -42,9 +42,6 @@ ServerSignature Off
     Deny from all
 </FilesMatch>
 
-# Mostrar index.html cuando visiten /home/
-RewriteRule ^home/?$ /index.html [L]
-
 # URLs limpias para páginas en subcarpetas (ejemplo: /integrantes/ -> /pages/integrantes/integrantes.html)
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
