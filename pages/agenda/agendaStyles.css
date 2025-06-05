@@ -87,3 +87,7 @@
 .navButtons button:hover {
     background: #1a252f;
 }
+
+@media (min-width: 460px) and(max-width: 768px) {
+    
+}

@@ -45,3 +45,7 @@ button[type="submit"]:hover {
     margin-top: 40px;
     text-align: center;
 }
+
+@media (min-width: 460px) and(max-width: 768px) {
+    
+}

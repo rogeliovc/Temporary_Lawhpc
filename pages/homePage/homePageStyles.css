@@ -143,7 +143,7 @@
   }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (min-width: 460px) and(max-width: 768px) {
     
     .main-nav {
         margin-top: 15px;

@@ -56,7 +56,7 @@
 }
 
 /* Estilos responsivos */
-@media (max-width: 768px) {
+@media (min-width: 460px) and(max-width: 768px) {
     .team-table {
         display: flex;
         flex-wrap: wrap;
@@ -66,12 +66,5 @@
     .team-member {
         margin: 10px;
         width: calc(50% - 40px);
-    }
-}
-
-@media (max-width: 480px) {
-    .team-member {
-        width: 100%;
-        max-width: 280px;
     }
 }
