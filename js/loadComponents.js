@@ -90,12 +90,17 @@ function handleHeaderOnScroll() {
         console.error('No se encontró el elemento header');
         return;
     }
-    
+
+    // Elimina el listener previo si existe
+    if (window._headerScrollHandler) {
+        window.removeEventListener('scroll', window._headerScrollHandler);
+    }
+
     let lastScroll = 0;
     const scrollThreshold = 100; // Píxeles a desplazar antes de que el header se oculte
     const showThreshold = 20; // Píxeles desde arriba para mostrar el header
     let ticking = false;
-    
+
     function updateHeader() {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         const isAtTop = currentScroll <= showThreshold;
@@ -139,11 +144,12 @@ function handleHeaderOnScroll() {
     }
     
     // Agregar el evento de scroll
-    window.addEventListener('scroll', onScroll, { passive: true });
-    
+    window._headerScrollHandler = onScroll;
+    window.addEventListener('scroll', window._headerScrollHandler, { passive: true });
+
     // Inicializar el estado del header
     updateHeader();
-    
+
     // Función para verificar si estamos cerca de la parte superior
     function checkTop() {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -151,7 +157,7 @@ function handleHeaderOnScroll() {
             header.classList.remove('hide-header');
         }
     }
-    
+
     // Verificar periódicamente si estamos cerca de la parte superior
     setInterval(checkTop, 300);
 }
@@ -250,6 +256,7 @@ async function initializeHeader() {
             console.error('❌ No se pudo cargar el header');
         } else {
             console.log('✨ Header cargado exitosamente');
+            initializeHeaderScroll(); // <-- Llama aquí después de cargar el header
         }
     } catch (error) {
         console.error('❌ Error durante la carga del header:', error);

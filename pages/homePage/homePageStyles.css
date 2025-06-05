@@ -42,8 +42,7 @@
     content: '';
     position: absolute;
     height: 4px;
-    background-color: #9c27b0;
-    border-radius: 2px;
+    background-color: #ff00ff;
     bottom: 0;
     min-width: 150px;
     }
@@ -54,15 +53,14 @@
     
   /* Estilos para la sección Acerca de */
   .aboutSection {
-    background-color: #373434cf;  
+    background: linear-gradient(100deg, #646464, #040305);  
     padding: 40px 0;
     margin: 40px 0;
   }
   
   .aboutSection .container {
-    background-color: #605d5d92;  
+    background-color: transparent;  
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
   
   /* Estilos para el contenedor del botón */
@@ -74,7 +72,7 @@
   }
   
   .seeMoreBtn {
-    background-color: #9c27b0;
+    background-color: #ff00ff;
     color: black;
     border: none;
     padding: 12px 30px;
@@ -85,7 +83,7 @@
   }
   
   .seeMoreBtn:hover {
-    background-color: #7b1fa2;
+    background-color: #ff00ff;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
@@ -94,7 +92,7 @@
   .missionAndNews {
     background-color: white;  
     padding: 40px 0;
-    margin: 0;
+    margin: -40px 0 0 0;
   }
   
   .missionAndNews .container {
@@ -131,10 +129,9 @@
     justify-content: left;
     align-items: left;
     margin-top: 40px;
-    flex-wrap: wrap;
     gap: 20px;
   }
-  
+
   .newsImg {
     max-width: 50%;
     height: auto;
