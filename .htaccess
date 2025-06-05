@@ -25,15 +25,12 @@ Options -Indexes
 
 # Headers de seguridad y CSP (versión compatible con Hostinger)
 <IfModule mod_headers.c>
-    # Protección básica contra clickjacking y XSS
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set X-XSS-Protection "1; mode=block"
     Header always set X-Content-Type-Options "nosniff"
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' https: data:;"
-    # Configuración de seguridad adicional (comenta si causa problemas)
-    # Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-    # Header set Referrer-Policy "strict-origin-when-cross-origin"
-    # Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self' data:;"
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
 
 # Deshabilitar la firma del servidor
@@ -44,6 +41,11 @@ ServerSignature Off
     Order allow,deny
     Deny from all
 </FilesMatch>
+
+# URLs limpias para páginas principales
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ /pages/$1.html [L]
 
 # Comprimir archivos
 <IfModule mod_deflate.c>
