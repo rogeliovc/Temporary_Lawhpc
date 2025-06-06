@@ -113,7 +113,7 @@ ErrorDocument 500 /components/error.html
 # 4. Bloquear bots maliciosos
 <IfModule mod_rewrite.c>
     RewriteCond %{HTTP_USER_AGENT} ^$ [OR]
-    RewriteCond %{HTTP_USER_AGENT} ^(-|\.|') [OR]
+    RewriteCond %{HTTP_USER_AGENT} ^(-|\.|) [OR]
     RewriteCond %{HTTP_USER_AGENT} ^(.*)(<|>|%3C|%3E|%00) [NC,OR]
     RewriteCond %{HTTP_USER_AGENT} ^(java|curl|wget)([^.]*) [NC,OR]
     RewriteCond %{HTTP_USER_AGENT} ^(.*)(libwww-perl|libwwwperl|snoopy|winhttp|python|nikto|scan|clshttp|archiver|loader|email|harvest|extract|grab|miner) [NC,OR]
