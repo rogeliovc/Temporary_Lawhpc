@@ -6,44 +6,42 @@ RewriteBase /
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirección canónica (elige una opción)
-# Opción 1: Forzar no-www
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
-# Opción 2: Forzar www (descomenta si prefieres)
-# RewriteCond %{HTTP_HOST} !^www\. [NC]
-# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
-
 # Deshabilitar listado de directorios
 Options -Indexes
 
-# Proteger archivos sensibles
-# Protección de archivos sensibles (desactivada temporalmente)
-# <FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|env|json|config|yaml|yml)$">
-#     Order Allow,Deny
-#     Deny from all
-# </FilesMatch>
-
-# Headers de seguridad y CSP (versión compatible con Hostinger)
-<IfModule mod_headers.c>
-    Header always set X-Frame-Options "SAMEORIGIN"
-    Header always set X-XSS-Protection "1; mode=block"
-    Header always set X-Content-Type-Options "nosniff"
-    # Política de seguridad de contenido actualizada
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'self';"
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
-    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+# Configuración de tipos MIME para imágenes
+<IfModule mod_mime.c>
+    AddType image/jpeg .jpg .jpeg
+    AddType image/png .png
+    AddType image/gif .gif
+    AddType image/webp .webp
+    AddType image/svg+xml .svg
 </IfModule>
 
-# Deshabilitar la firma del servidor
-ServerSignature Off
+# Configuración de caché básica
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+# Manejo de errores personalizados
+ErrorDocument 400 /components/error.html
+ErrorDocument 401 /components/error.html
+ErrorDocument 403 /components/error.html
+ErrorDocument 404 /components/error.html
+ErrorDocument 500 /components/error.html
 
 # Prevenir acceso a archivos ocultos
 <FilesMatch "^\.">
     Order allow,deny
     Deny from all
 </FilesMatch>
-
 
 # URLs limpias para páginas en subcarpetas (ejemplo: /integrantes/ -> /pages/integrantes/integrantes.html)
 RewriteCond %{REQUEST_FILENAME} !-d
