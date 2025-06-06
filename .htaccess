@@ -6,13 +6,10 @@ RewriteBase /
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirección canónica (elige una opción)
-# Opción 1: Forzar no-www
+# Redirección canónica
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
-# Opción 2: Forzar www (descomenta si prefieres)
-# RewriteCond %{HTTP_HOST} !^www\. [NC]
-# RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
+
 
 # Deshabilitar listado de directorios
 Options -Indexes
@@ -48,19 +45,6 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([a-zA-Z0-9_-]+)/?$ /pages/$1/$1.html [L]
 
-# Comprimir archivos
-<IfModule mod_deflate.c>
-    AddOutputFilterByType DEFLATE text/plain
-    AddOutputFilterByType DEFLATE text/html
-    AddOutputFilterByType DEFLATE text/xml
-    AddOutputFilterByType DEFLATE text/css
-    AddOutputFilterByType DEFLATE application/xml
-    AddOutputFilterByType DEFLATE application/xhtml+xml
-    AddOutputFilterByType DEFLATE application/rss+xml
-    AddOutputFilterByType DEFLATE application/javascript
-    AddOutputFilterByType DEFLATE application/x-javascript
-</IfModule>
-
 # URLs amigables - Eliminar extensión .html
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
@@ -76,6 +60,7 @@ ErrorDocument 401 /components/error.html
 ErrorDocument 403 /components/error.html
 ErrorDocument 404 /components/error.html
 ErrorDocument 500 /components/error.html
+
 # Cache y expiración
 <IfModule mod_expires.c>
     ExpiresActive On
@@ -189,10 +174,3 @@ ErrorDocument 500 /components/error.html
     AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
     AddOutputFilterByType DEFLATE font/opentype font/ttf font/eot font/otf
 </IfModule>
-
-# 10. Redireccionar errores personalizados
-ErrorDocument 400 /components/error.html
-ErrorDocument 401 /components/error.html
-ErrorDocument 403 /components/error.html
-ErrorDocument 404 /components/error.html
-ErrorDocument 500 /components/error.html
