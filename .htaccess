@@ -70,11 +70,6 @@ RewriteRule ^(.*)$ $1.html [L]
 RewriteCond %{REQUEST_URI} /+[^\.]+$
 RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
 
-# Prevenir hotlinking de imágenes
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^https?://(www\.)?lawhpc\.org [NC]
-RewriteRule \.(jpe?g|gif|bmp|png|webp)$ - [NC,F,L]
-
 # Manejo de errores personalizados (asegúrate de crear estas páginas)
 ErrorDocument 400 /components/error.html
 ErrorDocument 401 /components/error.html
