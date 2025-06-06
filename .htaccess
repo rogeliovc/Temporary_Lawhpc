@@ -18,10 +18,11 @@ RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
 Options -Indexes
 
 # Proteger archivos sensibles
-<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|env|json|config|yaml|yml)$">
-    Order Allow,Deny
-    Deny from all
-</FilesMatch>
+# Protección de archivos sensibles (desactivada temporalmente)
+# <FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql|env|json|config|yaml|yml)$">
+#     Order Allow,Deny
+#     Deny from all
+# </FilesMatch>
 
 # Headers de seguridad y CSP (versión compatible con Hostinger)
 <IfModule mod_headers.c>
@@ -71,10 +72,10 @@ RewriteRule ^(.*)$ $1.html [L]
 RewriteCond %{REQUEST_URI} /+[^\.]+$
 RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
 
-# Prevenir hotlinking de imágenes
-RewriteCond %{HTTP_REFERER} !^$
-RewriteCond %{HTTP_REFERER} !^https?://(www\.)?lawhpc\.org [NC]
-RewriteRule \.(jpe?g|gif|bmp|png|webp)$ - [NC,F,L]
+# Prevenir hotlinking de imágenes (desactivado temporalmente)
+# RewriteCond %{HTTP_REFERER} !^$
+# RewriteCond %{HTTP_REFERER} !^https?://(www\.)?lawhpc\.org [NC]
+# RewriteRule \.(jpe?g|gif|bmp|png|webp)$ - [NC,F,L]
 
 # Manejo de errores personalizados (asegúrate de crear estas páginas)
 ErrorDocument 400 /components/error.html
