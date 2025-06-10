@@ -91,6 +91,7 @@ footer {
 
 @media (max-width: 768px) {
   .footer-content {
+      width: auto;
       padding: 20px;
   }
   .footer-row {
