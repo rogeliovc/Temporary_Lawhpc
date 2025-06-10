@@ -1,58 +1,111 @@
 # Latin American Women in High Performance Computing (LAW HPC)
 
+[![Estado del Proyecto](https://img.shields.io/badge/estado-activo-brightgreen.svg)](https://github.com/rogeliovc/Temporary_Lawhpc)
+
 ![LAW HPC Banner](/pages/homePage/assets/banner.png)
 
-Sitio web oficial de Latin American Women in High Performance Computing, una iniciativa para promover la participación de mujeres en el campo de la computación de alto rendimiento en América Latina.
+Sitio web oficial de Latin American Women in High Performance Computing (LAW HPC), una iniciativa para promover y visibilizar la participación de mujeres en el campo de la computación de alto rendimiento en América Latina. Este proyecto busca crear una comunidad inclusiva que fomente la colaboración, el aprendizaje y el crecimiento profesional en el área de HPC.
 
-##  Características
+##  Características Principales
 
-- **Diseño Responsivo**: Adaptable a diferentes tamaños de pantalla
-- **Navegación Intuitiva**: Fácil acceso a todas las secciones
-- **Carga Dinámica**: Componentes modulares para mejor mantenimiento
-- **Rendimiento Optimizado**: Carga rápida y eficiente
+- **🖥️ Diseño Adaptativo**: Interfaz que se ajusta perfectamente a cualquier dispositivo, desde móviles hasta pantallas de escritorio.
+- **⚡ Rendimiento Optimizado**: Carga ultrarrápida gracias a la optimización de recursos y técnicas de carga diferida.
+- **🔍 Accesibilidad**: Desarrollado siguiendo las pautas WCAG 2.1 para garantizar la accesibilidad universal.
+- **🔄 Componentes Modulares**: Arquitectura basada en componentes reutilizables para un mantenimiento sencillo.
+- **🔒 Seguridad Mejorada**: Configuraciones de seguridad avanzadas mediante headers HTTP y políticas de contenido.
 
 ##  Estructura del Proyecto
 
 ```
 lawhpc-demo/
-├── components/           # Componentes reutilizables
+├── components/           # Componentes reutilizables (header, footer, etc.)
 ├── css/                  # Hojas de estilo
-│   ├── components/       # Estilos de componentes
-│   └── Globalstyles.css  # Estilos globales
-├── images/               # Imágenes generales
-├── js/                   # Scripts JavaScript
-├── pages/                # Páginas del sitio
-│   ├── agenda/          # Sección de agenda
-│   ├── contacto/        # Página de contacto
+│   ├── components/       # Estilos específicos de componentes
+│   └── Globalstyles.css  # Estilos globales y variables CSS
+├── images/               # Recursos gráficos globales
+├── js/                   # Lógica de la aplicación
+│   ├── loadComponents.js # Carga dinámica de componentes
+│   └── main.js           # Punto de entrada de JavaScript
+├── pages/                # Páginas del sitio web
+│   ├── agenda/          # Sección de agenda de eventos
+│   │   ├── agenda.html  # Estructura HTML
+│   │   └── agendaStyles.css  # Estilos específicos
+│   ├── contacto/        # Formulario de contacto
+│   │   ├── contacto.html
+│   │   └── contactoStyles.css
 │   ├── homePage/        # Página principal
-│   │   └── assets/     # Recursos de la página principal
-│   └── integrantes/     # Sección de integrantes
-├── index.html           # Punto de entrada
-└── README.md            # Este archivo
+│   │   ├── assets/     # Imágenes y recursos
+│   │   └── homePageStyles.css
+│   └── integrantes/     # Sección de equipo
+│       ├── integrantes.html
+│       └── integrantesStyles.css
+├── .htaccess           # Configuración del servidor Apache
+├── index.html          # Punto de entrada principal
+└── README.md           # Documentación del proyecto
 ```
 
-##  Cómo Empezar
+##  Comenzando
 
-### Requisitos Previos
+### Requisitos del Sistema
 
-- Navegador web moderno (Chrome, Firefox, Safari, Edge)
-- Editor de código (VS Code, Sublime Text, etc.)
-- Servidor web local (opcional, para desarrollo)
+- Navegador web moderno (últimas 2 versiones de):
+  - Chrome / Edge
+  - Firefox
+  - Safari
+- Editor de código (recomendado):
+  - [Visual Studio Code](https://code.visualstudio.com/)
+  - [Sublime Text](https://www.sublimetext.com/)
+  - [WebStorm](https://www.jetbrains.com/webstorm/)
+- [Git](https://git-scm.com/) (para control de versiones)
 
-### Instalación Local
+###  Instalación Local
 
-1. Clona el repositorio:
+1. **Clonar el repositorio**:
    ```bash
-   git clone [URL_DEL_REPOSITORIO]
-   cd lawhpc-demo
+   git clone https://github.com/rogeliovc/Temporary_Lawhpc.git
+   cd Temporary_Lawhpc
    ```
 
-2. Abre el archivo `index.html` en tu navegador o usa un servidor local:
+2. **Iniciar un servidor local**:
    ```bash
-   # Usando Python (si está instalado)
+   # Opción 1: Usando Python (preinstalado en la mayoría de sistemas)
    python3 -m http.server 8000
+   
+   # Opción 2: Usando Node.js con http-server
+   npx http-server -p 8000
+   
+   # Opción 3: Usando PHP (si está instalado)
+   php -S localhost:8000
    ```
-   Luego abre `http://localhost:8000` en tu navegador.
+
+3. **Abrir en el navegador**:
+   ```
+   http://localhost:8000
+   ```
+
+###  Flujo de Trabajo
+
+1. Crear una rama para nuevas características:
+   ```bash
+   git checkout -b feature/nombre-de-la-caracteristica
+   ```
+2. Hacer commit de los cambios:
+   ```bash
+   git add .
+   git commit -m "Descripción clara de los cambios"
+   ```
+3. Sincronizar con el repositorio remoto:
+   ```bash
+   git push origin feature/nombre-de-la-caracteristica
+   ```
+4. Crear un Pull Request para revisión
+
+###  Herramientas Recomendadas
+
+- **Editores**: VS Code con extensiones como Live Server, Prettier, ESLint
+- **Pruebas**: BrowserStack para pruebas multiplataforma
+- **Rendimiento**: Lighthouse, WebPageTest
+- **SEO**: Google Search Console, Screaming Frog
 
 ##  Desarrollo
 
@@ -68,14 +121,41 @@ lawhpc-demo/
 - **CSS**: Nombrado BEM para clases
 - **JS**: Funciones modulares con manejo de errores
 
+##  Tecnologías Utilizadas
+
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Configuración del Servidor**: Archivo .htaccess para URLs limpias y optimizaciones
+- **Compatibilidad**: Navegadores modernos (últimas 2 versiones de Chrome, Firefox, Safari, Edge)
+
+##  Optimizaciones
+
+El proyecto incluye:
+- Caché para activos estáticos
+- Compresión GZIP para transferencia de archivos
+- Headers de seguridad mejorados
+- Redireccionamiento HTTPS forzado (configurado en el host)
+
 ##  Despliegue
 
-Despliegue automatico por medio del host
+El despliegue se realiza automáticamente a través del servicio de hosting configurado. Los cambios en la rama `main` se reflejarán automáticamente en producción.
 
+### Requisitos del Hosting
+- Soporte para archivos estáticos (HTML, CSS, JS)
+- Compatibilidad con .htaccess para las reglas de reescritura
+- Certificado SSL para conexiones seguras
+
+##  Contribuyendo
+
+Si deseas contribuir al proyecto, por favor:
+1. Crea un fork del repositorio
+2. Crea una rama para tu característica (`git checkout -b feature/nueva-caracteristica`)
+3. Haz commit de tus cambios (`git commit -am 'Añade nueva característica'`)
+4. Haz push a la rama (`git push origin feature/nueva-caracteristica`)
+5. Abre un Pull Request
 
 ##  Contacto
 
-Proximamente
+Para más información sobre el proyecto o colaboraciones, por favor contacta al equipo de LAW HPC a través de los canales oficiales que se encuentran en el sitio web.
 
 ---
 
