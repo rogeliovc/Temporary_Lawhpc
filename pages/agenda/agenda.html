@@ -12,49 +12,76 @@
 
     <main class="container">
         <section class="agendaSection">
-            <h1>Agenda de Eventos</h1>
-            <p class="lead">Próximos eventos y actividades de LAW HPC</p>
-            
-            <div class="calendarNavigation">
-                <div class="monthSelector">Junio 2025</div>
-                <div class="navButtons">
-                    <button id="prevMonth">Anterior</button>
-                    <button id="nextMonth">Siguiente</button>
-                </div>
+            <div class="section-header">
+                <h1>Agenda de Eventos</h1>
+                <p class="lead">Próximos eventos y actividades de LAW HPC</p>
             </div>
             
             <div class="eventsContainer">
-                <!-- Evento 1 -->
-                <div class="eventCard">
-                    <img src="../homePage/assets/WiHPC_img.01.png" alt="Taller de HPC" class="eventImage">
-                    <div class="eventDetails">
-                        <div class="eventDate">15 Junio 2025 • 10:00 AM</div>
-                        <h3 class="event-title">Taller de Introducción a HPC</h3>
-                        <p class="event-description">Aprende los conceptos básicos de Computación de Alto Rendimiento en este taller introductorio.</p>
-                        <a href="#" class="event-link">Más información</a>
+                <section class="upcoming-events">
+                    <h2 class="section-title">Próximos Eventos</h2>
+                    <div class="events-grid">
+                        <!-- Evento 1 -->
+                        <div class="eventCard">
+                            <img src="../homePage/assets/WiHPC_img.01.png" alt="Taller de HPC" class="eventImage">
+                            <div class="eventDetails">
+                                <div class="eventDate">15 Junio 2025 • 10:00 AM</div>
+                                <h3 class="eventTitle">Taller de Introducción a HPC</h3>
+                                <p class="eventDescription">Aprende los conceptos básicos de Computación de Alto Rendimiento en este taller introductorio.</p>
+                                <a href="#" class="eventLink">Más información</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Evento 2 -->
+                        <div class="eventCard">
+                            <img src="../homePage/assets/WiHPC_img.02.png" alt="Charla de Mujeres en HPC" class="eventImage">
+                            <div class="eventDetails">
+                                <div class="eventDate">22 Junio 2025 • 4:00 PM</div>
+                                <h3 class="eventTitle">Mujeres Líderes en HPC</h3>
+                                <p class="eventDescription">Charla con mujeres destacadas en el campo de la Computación de Alto Rendimiento.</p>
+                                <a href="#" class="eventLink">Más información</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Evento 3 -->
+                        <div class="eventCard">
+                            <img src="../homePage/assets/WiHPC_img.03.png" alt="Hackathon HPC" class="eventImage">
+                            <div class="eventDetails">
+                                <div class="eventDate">30 Junio 2025 • 9:00 AM</div>
+                                <h3 class="eventTitle">Hackathon de HPC</h3>
+                                <p class="eventDescription">Participa en nuestro hackathon y desarrolla soluciones innovadoras usando HPC.</p>
+                                <a href="#" class="eventLink">Registrarse</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
                 
-                <!-- Evento 2 -->
-                <div class="eventCard">
-                    <img src="../homePage/assets/WiHPC_img.02.png" alt="Charla de Mujeres en HPC" class="eventImage">
-                    <div class="eventDetails">
-                        <div class="eventDate">22 Junio 2025 • 4:00 PM</div>
-                        <h3 class="eventTitle">Mujeres Líderes en HPC</h3>
-                        <p class="eventDescription">Charla con mujeres destacadas en el campo de la Computación de Alto Rendimiento.</p>
-                        <a href="#" class="event-link">Más información</a>
+                <section class="past-events">
+                    <h2 class="section-title">Eventos Pasados</h2>
+                    <div class="events-grid">
+                        <!-- Evento pasado 1 -->
+                        <div class="eventCard past">
+                            <img src="/pages/agenda/assets/carla2023.png" alt="Conferencia Anual" class="eventImage">
+                            <div class="eventDetails">
+                                <div class="eventDate">19 Sep 2023 • 8:30 AM</div>
+                                <h3 class="eventTitle">Carla 2023 Latin American Women on HPC</h3>
+                                <p class="eventDescription">This workshop aims to unite members of underrepresented groups in STEM, specially women, working in High-Performance Computing and related areas.</p>
+                                <a href="https://carlaconference.org/previous_editions/2023/www.carla2023.org/schedule/workshop/161.html" target="_blank" rel="noopener noreferrer" title="Carla 2023 Latin American Women on HPC"  class="eventLink">Visita la página</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Evento pasado 2 -->
+                        <div class="eventCard past">
+                            <img src="/pages/agenda/assets/BN-WomenHPC.png" alt="Taller Avanzado" class="eventImage">
+                            <div class="eventDetails">
+                                <div class="eventDate">11 Mar 2025</div>
+                                <h3 class="eventTitle">Latin American Women in HPC</h3>
+                                <p class="eventDescription">The event is aimed at female researchers, developers and students who want to make use of high-performance computing infrastructure.</p>
+                                <a href="https://sites.google.com/view/la-whpc/inicio" target="_blank" rel="noopener noreferrer" title="Latin American Women in HPC" class="eventLink">Visita la página</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <!-- Evento 3 -->
-                <div class="eventCard">
-                    <img src="../homePage/assets/WiHPC_img.03.png" alt="Hackathon HPC" class="eventImage">
-                    <div class="eventDetails">
-                        <div class="eventDate">30 Junio 2025 • 9:00 AM</div>
-                        <h3 class="eventTitle">Hackathon de HPC</h3>
-                        <p class="eventDescription">Participa en nuestro hackathon y desarrolla soluciones innovadoras usando HPC.</p>
-                        <a href="#" class="event-link">Registrarse</a>
-                    </div>
+                </section>
                 </div>
             </div>
         </section>
@@ -65,44 +92,5 @@
     <script src="/js/loadComponents.js"></script>
     
     <script src="/js/main.js"></script>
-    <script>
-        // Script para la navegación del calendario
-        document.addEventListener('DOMContentLoaded', function() {
-            const monthNames = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-                             "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
-            
-            let currentDate = new Date()    ;
-            const monthSelector = document.querySelector('.monthSelector');
-            
-            if (monthSelector) {
-                function updateMonthDisplay() {
-                    monthSelector.textContent = `${monthNames[currentDate.getMonth()]} ${currentDate.getFullYear()}`;
-                }
-                
-                updateMonthDisplay();
-                
-                const prevBtn = document.getElementById('prevMonth');
-                const nextBtn = document.getElementById('nextMonth');
-                
-                if (prevBtn) {
-                    prevBtn.addEventListener('click', function() {
-                        currentDate.setMonth(currentDate.getMonth() - 1);
-                        updateMonthDisplay();
-                        // Aquí iría el código para cargar los eventos del mes anterior
-                    });
-                }
-                
-                if (nextBtn) {
-                    nextBtn.addEventListener('click', function() {
-                        currentDate.setMonth(currentDate.getMonth() + 1);
-                        updateMonthDisplay();
-                        // Aquí iría el código para cargar los eventos del mes siguiente
-                    });
-                }
-                
-                updateMonthDisplay();
-            }
-        });
-    </script>
 </body>
 </html>

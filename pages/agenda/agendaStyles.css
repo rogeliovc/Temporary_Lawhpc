@@ -1,16 +1,122 @@
 
+/* Contenedor principal */
+.agendaSection {
+    padding: 4rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-header h1::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(90deg, #4a90e2, #8e44ad);
+    bottom: -10px;
+    left: 20%;
+    border-radius: 2px;
+}
+
+.section-header .lead {
+    color: #b3b3b3;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 1.5rem auto 0;
+    line-height: 1.6;
+}
+
 .eventsContainer {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
     margin-top: 30px;
+}
+
+/* Estilos para las secciones de eventos */
+.upcoming-events,
+.past-events {
+    margin-bottom: 50px;
+}
+
+/* Estilo de título de sección tipo noticia */
+.section-title {
+    color: #fff;
+    font-size: 2.2em;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+    padding: 0 0 15px 0;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 2px;
+}
+
+.section-title::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 75px;
+    width: 30px;
+    height: 4px;
+    background: #3498db;
+    border-radius: 2px;
+    opacity: 0.7;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
 }
 
 .eventCard {
     background: #1a1a1a;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para eventos pasados */
+.eventCard.past {
+    opacity: 0.8;
+}
+
+.eventCard.past .eventTitle {
+    color: #95a5a6;
+}
+
+.eventCard.past .eventLink {
+    background: #7f8c8d;
+}
+
+.eventCard.past .eventLink:hover {
+    background: #6c7a7c;
 }
 
 .eventCard:hover {
@@ -20,40 +126,56 @@
 
 .eventImage {
     width: 100%;
-    height: 180px;
+    height: 220px;
     object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
 .eventDetails {
-    padding: 20px;
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .eventDate {
     color: #7f8c8d;
-    font-size: 0.9em;
-    margin-bottom: 10px;
+    font-size: 0.95em;
+    margin-bottom: 12px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .eventTitle {
     color: #fff;
-    margin: 10px 0;
+    margin: 0 0 15px 0;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1.3;
 }
 
 .eventDescription {
     color: #bdc3c7;
-    margin-bottom: 15px;
-    font-size: 0.95em;
+    margin-bottom: 20px;
+    font-size: 1.05em;
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
 .eventLink {
-    display: inline-block;
-    padding: 8px 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
     background: #2c3e50;
     color: white;
     text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.9em;
-    transition: background-color 0.3s;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    align-self: flex-start;
+    margin-top: auto;
 }
 
 .eventLink:hover {
@@ -88,6 +210,44 @@
     background: #1a252f;
 }
 
-@media (min-width: 460px) and(max-width: 768px) {
+/* Estilos responsivos */
+@media (max-width: 900px) {
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     
+    .section-title {
+        font-size: 1.5em;
+    }
+    
+    .monthSelector {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendarNavigation {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    .navButtons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .navButtons button {
+        width: 48%;
+        margin: 0;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
 }
