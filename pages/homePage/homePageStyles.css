@@ -28,24 +28,43 @@
     padding: 40px 20px;
   }
     
-  .container h2.sectionTitle {
+  .section-header {
     text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    color: white;
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
     position: relative;
-    display: flex;
-    margin: 0 auto 30px;
-    padding-bottom: 10px;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .sectionTitle::after {
+    display: inline-block;
+}
+
+.section-header h2::after {
     content: '';
     position: absolute;
+    width: 60%;
     height: 4px;
-    background-color: #ff00ff;
-    bottom: 0;
-    min-width: 150px;
-    }
+    background: linear-gradient(90deg, #4a90e2, #8e44ad);
+    bottom: -10px;
+    left: 20%;
+    border-radius: 2px;
+}
+
+/* Ajustes específicos para la sección de noticias */
+.missionAndNews .section-header h2 {
+    color: #000;
+}
+
+.news-section .section-header h2 {
+    color: #fff;
+}
+
+.news-section .section-header h2::after,
+.missionAndNews .section-header h2::after {
+    background: linear-gradient(90deg, #4a90e2, #8e44ad);
+}
   
   .container p {
     font-size: x-large;
