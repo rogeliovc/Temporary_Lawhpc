@@ -2,7 +2,22 @@
     <div class="header-content">
         <div>
             <a href="/index.html" aria-label="Inicio">
-                <img src="/images/webp/logo.webp" alt="LAW HPC Logo" class="logoImgHeader">
+                <picture>
+                    <source 
+                        type="image/webp"
+                        srcset="/images/optimized/logo-sm.webp 120w,
+                                /images/optimized/logo-md.webp 180w,
+                                /images/optimized/logo.webp 240w"
+                        sizes="(max-width: 768px) 120px, (max-width: 1024px) 180px, 240px">
+                    <img 
+                        src="/images/optimized/logo.webp" 
+                        alt="LAW HPC Logo" 
+                        class="logoImgHeader"
+                        width="240"
+                        height="115"
+                        loading="eager"
+                        decoding="async">
+                </picture>
             </a>
         </div>
         <button class="mobile-menu-toggle" aria-label="Menú" aria-expanded="false" aria-controls="main-nav">

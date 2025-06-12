@@ -2,7 +2,22 @@
     <div class="footer-content">
         <div class="footer-row">
             <div>
-                <img src="/images/webp/logo.webp" alt="LAW HPC Logo" class="logoImgFooter">
+                <picture>
+                    <source 
+                        type="image/webp"
+                        srcset="/images/optimized/logo-sm.webp 120w,
+                                /images/optimized/logo-md.webp 180w,
+                                /images/optimized/logo.webp 240w"
+                        sizes="(max-width: 768px) 120px, (max-width: 1024px) 180px, 240px">
+                    <img 
+                        src="/images/optimized/logo.webp" 
+                        alt="LAW HPC Logo" 
+                        class="logoImgFooter"
+                        width="240"
+                        height="115"
+                        loading="lazy"
+                        decoding="async">
+                </picture>
             </div>
             <div class="newsletter-box">
                 <h3>Sign up to receive our newsletter</h3>
