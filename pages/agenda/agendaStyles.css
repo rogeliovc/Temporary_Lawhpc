@@ -166,6 +166,14 @@
     transform: translateY(-1px);
 }
 
+
+/* SVG predeterminado para eventos sin imagen */
+.event-default-image {
+    object-fit: contain;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
 /* Estilos responsivos */
 @media (max-width: 900px) {
     .events-grid {
