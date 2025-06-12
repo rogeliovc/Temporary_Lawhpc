@@ -74,6 +74,8 @@
     aspect-ratio: 4/3;
     max-width: 400px;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
   }
 
   .news-image-container {
@@ -93,8 +95,8 @@
 
   /* Efecto hover para imágenes de misión */
   .mission-image-container:hover img {
-    transform: scale(1.03);
-    transition: transform 0.3s ease;
+    transform: scale(1.05);
+    transition: transform 0.4s ease;
   }
     
   .section-header {
@@ -190,14 +192,34 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
   
-  /*Estilos para las imágenes de la sección Misión*/
+  /* Estilos para las imágenes de la sección Misión */
   .missionImages {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 40px;
-    flex-wrap: wrap;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    justify-items: center;
+  }
+  
+  .mission-image-container {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .mission-image-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .mission-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
   
   .missionImg {
