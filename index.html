@@ -73,6 +73,90 @@ Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equid
           <p>
             Fortalecer la presencia, liderazgo y desarrollo profesional de las mujeres en el ámbito de la computación de alto rendimiento en América Latina, desde la investigación básica hasta las aplicaciones de frontera promoviendo una comunidad inclusiva, colaborativa y orientada a la innovación científica y tecnológica con impacto regional y global.
           </p>
+
+          <div class="accordion-container">
+            <!-- Objetivos Particulares Accordion -->
+            <div class="accordion">
+              <button class="accordion-header" aria-expanded="false" aria-controls="objectives-content">
+                <span class="accordion-title">Objetivos Particulares</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div id="objectives-content" class="accordion-content">
+                <div class="accordion-body">
+                  <div class="list-item">
+                    <div class="item-badge">1</div>
+                    <div class="item-text">Fomentar la formación y mentoría de mujeres en HPC mediante programas educativos, talleres y actividades de capacitación técnica especializada.</div>
+                  </div>
+                  <div class="list-item">
+                    <div class="item-badge">2</div>
+                    <div class="item-text">Visibilizar el trabajo y contribuciones de mujeres en HPC en la región, destacando trayectorias académicas, profesionales y casos de éxito.</div>
+                  </div>
+                  <div class="list-item">
+                    <div class="item-badge">3</div>
+                    <div class="item-text">Impulsar redes de colaboración regional e internacional que faciliten proyectos conjuntos, movilidad académica y alianzas institucionales.</div>
+                  </div>
+                  <div class="list-item">
+                    <div class="item-badge">4</div>
+                    <div class="item-text">Promover políticas inclusivas y prácticas equitativas en ambientes académicos, científicos y tecnológicos relacionados con HPC.</div>
+                  </div>
+                  <div class="list-item">
+                    <div class="item-badge">5</div>
+                    <div class="item-text">Facilitar el acceso a oportunidades de desarrollo profesional, financiamiento, participación en conferencias y representación en espacios de toma de decisión.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Metas Accordion -->
+            <div class="accordion">
+              <button class="accordion-header" aria-expanded="false" aria-controls="goals-content">
+                <span class="accordion-title">Metas</span>
+                <span class="accordion-icon">+</span>
+              </button>
+              <div id="goals-content" class="accordion-content">
+                <div class="accordion-body">
+                  <div class="list-item">
+                    <div class="item-badge">1</div>
+                    <div class="item-text"><strong>Red activa:</strong> Crear y consolidar una red latinoamericana de mujeres en HPC activa y sostenible.</div>
+                  </div>
+                  <div class="list-item">
+                    <div class="item-badge">2</div>
+                    <div class="item-text"><strong>Participación:</strong> Incrementar la participación de mujeres en eventos y conferencias de HPC en América Latina.</div>
+                  </div>
+                  <div class="list-item">
+                    <div class="item-badge">3</div>
+                    <div class="item-text"><strong>Visibilidad:</strong> Destacar las contribuciones y logros de las mujeres en HPC en América Latina a través de plataformas y eventos.</div>
+                  </div>
+                  <div class="list-item">
+                    <div class="item-badge">4</div>
+                    <div class="item-text"><strong>Eventos regionales:</strong> Organizar al menos un evento anual de visibilización y networking, articulado con conferencias regionales.</div>
+                  </div>
+                  <div class="list-item">
+                    <div class="item-badge">5</div>
+                    <div class="item-text"><strong>Eventos internacionales:</strong> Participar en eventos internacionales como SC e ISC.</div>
+                  </div>
+                  <div class="list-item">
+                    <div class="item-badge">6</div>
+                    <div class="item-text"><strong>Colaboraciones:</strong> Establecer colaboración con instituciones académicas, centros de supercomputación y organizaciones globales.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <script>
+            document.querySelectorAll('.accordion-header').forEach(button => {
+              button.addEventListener('click', () => {
+                const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                button.setAttribute('aria-expanded', !isExpanded);
+                const content = document.getElementById(button.getAttribute('aria-controls'));
+                content.style.maxHeight = isExpanded ? '0' : content.scrollHeight + 'px';
+                const icon = button.querySelector('.accordion-icon');
+                icon.textContent = isExpanded ? '+' : '−';
+              });
+            });
+          </script>
+
           <div class="missionImages">
             <!-- Imagen 1 -->
             <div class="image-container mission-image-container">
