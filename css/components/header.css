@@ -1,16 +1,20 @@
 /* Estilos para el header */
 header {
-    background-color: transparent !important;
-    padding: 1rem 0;
+    background-color: rgba(0, 0, 0, 0) !important;
+    padding: 0.5rem 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     width: 100%;
-    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
-    box-shadow: none !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 0);
     transform: translateY(0);
+}
+
+/* Efecto al hacer scroll */
+header.scrolled {
+    padding: 0.3rem 0;
 }
 
 /* Clase que se agrega cuando el header debe estar oculto */
@@ -19,11 +23,12 @@ header.hide-header {
 }
 
 .header-content {
+    max-width: 1400px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: left ;
-    padding: 1rem 2rem;
+    align-items: center;
+    padding: 0.5rem 2rem;
     background-color: transparent !important;
 }
 
@@ -36,17 +41,17 @@ header.hide-header {
 
 /* Estilos del logo */
 .logoImgHeader {
-    height: 120px;
+    height: 100px;
     width: auto;
-    transition: all 0.3s ease-in-out;
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.3));
 }
 
 /* Efecto hover del logo */
 .logoImgHeader:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    transform: scale(1.05) translateY(-2px);
+    opacity: 1;
+    filter: drop-shadow(0 4px 12px rgba(138, 74, 201, 0.4));
 }
 
 /* Ajustes responsivos para el logo */
@@ -81,8 +86,8 @@ header.hide-header {
     display: flex;
     list-style: none;
     margin: 0;
-    padding: 0;
-    gap: 2.5rem;
+    padding: 0.5rem 0;
+    gap: 1.5rem;
     align-items: center;
 }
 
@@ -94,10 +99,12 @@ header.hide-header {
     font-size: 0.95rem;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    padding: 0.5rem 0.25rem;
+    padding: 0.75rem 1rem;
     position: relative;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0.9;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 /* Efecto hover y estado activo */
@@ -105,8 +112,10 @@ header.hide-header {
 .main-nav a:focus,
 .main-nav a.active {
     color: #fff;
+    background: rgba(138, 74, 201, 0.2);
     opacity: 1;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0);
+    transform: translateY(-2px);
 }
 
 /* Línea inferior animada */
@@ -115,37 +124,22 @@ header.hide-header {
     position: absolute;
     width: 0;
     height: 2px;
-    bottom: 0;
+    bottom: 8px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(90deg, transparent, #8a4ac9, transparent);
+    background: linear-gradient(90deg, transparent, #8a4ac9, #ff6b6b, transparent);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     opacity: 0.8;
+    border-radius: 2px;
 }
 
 /* Efecto hover en la línea */
 .main-nav a:hover::after,
 .main-nav a:focus::after,
 .main-nav a.active::after {
-    width: 100%;
+    width: 80%;
     opacity: 1;
-}
-
-/* Efecto de brillo en el texto al hacer hover */
-.main-nav a::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to right, 
-        rgba(255, 255, 255, 0) 0%, 
-        rgba(255, 255, 255, 0.1) 50%, 
-        rgba(255, 255, 255, 0) 100%);
-    transform: translateX(-100%) skewX(-15deg);
-    transition: transform 0.6s ease;
-    pointer-events: none;
+    box-shadow: 0 0 15px rgba(138, 74, 201, 0.6);
 }
 
 .main-nav a:hover::before {
@@ -170,14 +164,17 @@ header.hide-header {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 80%;
-        max-width: 300px;
+        width: 85%;
+        max-width: 320px;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
-        backdrop-filter: blur(10px);
-        padding: 6rem 2rem 2rem;
-        transition: right 0.4s ease-in-out;
+        background: rgba(10, 10, 15, 0.98);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+        padding: 7rem 2rem 2rem;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         z-index: 1000;
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.3);
     }
     
     .main-nav.active {

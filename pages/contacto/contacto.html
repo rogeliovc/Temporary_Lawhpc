@@ -10,10 +10,18 @@
 </head>
 <body>
 
-    <main class="container">
-        <section class="contactSection">
-            <h1>Contáctanos</h1>
-            <p class="lead">¿Tienes preguntas o comentarios? Escríbenos.</p>
+    <main class="container" role="main">
+        <section class="contactSection" itemscope itemtype="http://schema.org/ContactPage">
+            <h1 itemprop="headline">Contáctanos</h1>
+            <p class="lead" itemprop="description">¿Tienes preguntas, comentarios o deseas unirte a nuestra comunidad? Completa el siguiente formulario y nos pondremos en contacto contigo a la brevedad.</p>
+            <div class="contact-info" itemscope itemtype="http://schema.org/Organization">
+                <h2>Información de Contacto</h2>
+                <p><strong>Organización:</strong> <span itemprop="name">Latin American Women in HPC</span></p>
+                <p><strong>Email:</strong> <a href="mailto:contacto@lawhpc.org" itemprop="email">contacto@lawhpc.org</a></p>
+                <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <p><strong>Ubicación:</strong> <span itemprop="addressRegion">América Latina</span></p>
+                </div>
+            </div>
             
             <form class="contactForm" id="contactForm">
                 <div class="formGroup">
