@@ -1,79 +1,107 @@
-/* Estilos del banner */
+/* ===== Estilos del Banner ===== */
 .banner {
   width: 100%;
   margin: -100px 0 0;
   padding: 0;
-  background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   max-height: 80vh;
   overflow: hidden;
   position: relative;
   aspect-ratio: 16/6;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .bannerImg {
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
   object-position: center;
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: block;
 }
-  
-/* Contenido principal */
+
+/* Navegación sin JavaScript */
+.no-js-header {
+  background: #1a1a2e;
+  padding: 1rem;
+  text-align: center;
+  display: none; /* Oculto por defecto, se muestra solo si hay error en JS */
+}
+
+.no-js-header h1 {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+}
+
+.no-js-header nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.no-js-header a {
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.no-js-header a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* ===== Contenedores y Layout ===== */
+:root {
+  --container-max-width: 1200px;
+  --container-padding: 20px;
+  --transition-base: 0.3s ease;
+}
+
 .container {
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 40px var(--container-padding);
   position: relative;
 }
 
-/* Layout principal */
 main {
   min-height: 100vh;
   overflow: hidden;
 }
 
-/* Contenedores de imágenes */
+/* ===== Componentes Reutilizables ===== */
 .image-container {
   position: relative;
   width: 100%;
+  max-width: 100%;
   overflow: hidden;
   margin-bottom: 1.5rem;
+  aspect-ratio: 4/3;
 }
 
+/* Contenedor de imágenes de misión */
 .mission-image-container {
-  aspect-ratio: 4/3;
   max-width: 400px;
   margin: 0 auto;
-  position: relative;
-  overflow: hidden;
 }
 
-.image-container img {
+/* Estilos para imágenes dentro de contenedores */
+.image-container img,
+.mission-image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  background: #f5f5f5;
   transition: transform 0.4s ease;
+  display: block;
 }
 
+.image-container:hover img,
 .mission-image-container:hover img {
   transform: scale(1.05);
 }
 
-/* Efecto hover para imágenes */
-.mission-image-container:hover img {
-  transform: scale(1.05);
-}
-    
-/* Estilos para encabezados de sección */
+/* ===== Encabezados ===== */
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -108,8 +136,8 @@ main {
   width: 120px;
   background: linear-gradient(90deg, #9d4edd, #6f00ff);
 }
-  
-/* Estilos de párrafo */
+
+/* ===== Tipografía ===== */
 .container p {
   font-size: 1.2rem;
   line-height: 1.8;
@@ -120,36 +148,53 @@ main {
   margin-left: auto;
   margin-right: auto;
 }
-    
-/* Estilos para la sección Acerca de */
-.aboutSection {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  padding: 80px 0 60px;
+
+/* ===== Secciones ===== */
+.aboutSection,
+.missionAndNews,
+.news-section {
+  padding: 5rem 0;
   position: relative;
   overflow: hidden;
 }
 
-.aboutSection .container {
-  background-color: transparent;
-  border-radius: 8px;
+.aboutSection {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
-  
-/* Estilos para el botón Ver más */
+
+.missionAndNews {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%);
+}
+
+.news-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+/* ===== Botones ===== */
+:root {
+  --btn-padding: 0.875rem 2.1875rem;
+  --btn-radius: 30px;
+  --btn-shadow: 0 4px 15px rgba(111, 0, 255, 0.3);
+  --btn-hover-shadow: 0 8px 25px rgba(111, 0, 255, 0.4);
+  --btn-gradient: linear-gradient(45deg, #6f00ff, #9d4edd);
+  --btn-hover-gradient: linear-gradient(45deg, #7a1aff, #a94ee0);
+}
+
 .seeMore {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 1.25rem;
 }
 
 .seeMoreBtn {
-  background: linear-gradient(45deg, #6f00ff, #9d4edd);
+  background: var(--btn-gradient);
   color: white;
   border: none;
-  padding: 14px 35px;
-  border-radius: 30px;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: var(--transition-base);
   font-size: 1.1em;
   font-weight: 600;
   text-transform: uppercase;
@@ -157,46 +202,43 @@ main {
   position: relative;
   overflow: hidden;
   z-index: 1;
-  box-shadow: 0 4px 15px rgba(111, 0, 255, 0.3);
+  box-shadow: var(--btn-shadow);
+  text-decoration: none;
+  text-align: center;
+  display: inline-block;
 }
 
 .seeMoreBtn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(111, 0, 255, 0.4);
+  box-shadow: var(--btn-hover-shadow);
+  background: var(--btn-hover-gradient);
 }
 
 .seeMoreBtn:active {
   transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(111, 0, 255, 0.3);
 }
-  
-  .seeMoreBtn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #6f00ff, #9d4edd);
-    transition: all 0.4s ease;
-    z-index: -1;
-  }
-  
-  .seeMoreBtn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 0, 255, 0.4);
-  }
-  
-  .seeMoreBtn:hover::before {
-    left: 0;
-  }
-  
-  /* Estilos para la sección Misión y Noticias */
-  .missionAndNews {
-    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-    padding: 60px 0;
-    position: relative;
-    overflow: hidden;
-  }
+
+.seeMoreBtn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(111, 0, 255, 0.3);
+}
+
+.seeMoreBtn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--btn-hover-gradient);
+  transition: var(--transition-base);
+  z-index: -1;
+}
+
+.seeMoreBtn:hover::before {
+  left: 0;
+}
   
 /* Mission and News Section */
 .missionAndNews {
@@ -229,7 +271,6 @@ main {
   margin: 50px auto 30px;
   padding: 0 20px;
   position: relative;
-  z-index: 1;
 }
 
 .accordion {
@@ -237,7 +278,7 @@ main {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
+  transition: var(--transition-base);
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -249,7 +290,7 @@ main {
 
 .accordion-header {
   width: 100%;
-  padding: 22px 30px;
+  padding: 1.375rem 1.875rem;
   background: linear-gradient(135deg, #6f00ff 0%, #ff24e5 100%);
   border: none;
   text-align: left;
@@ -257,52 +298,47 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.3s ease;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: var(--transition-base);
   position: relative;
-  z-index: 2;
+  overflow: hidden;
 }
 
-.accordion-header:hover,
+.accordion-header:hover {
+  background: linear-gradient(135deg, #7a1aff 0%, #ff33eb 100%);
+  transform: translateY(-1px);
+}
+
+.accordion-header:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(111, 0, 255, 0.3);
+}
+
 .accordion-header[aria-expanded="true"] {
   background: linear-gradient(135deg, #9d4edd 0%, #6f00ff 100%);
   transform: translateY(-1px);
 }
 
-.accordion-header[aria-expanded="true"] .accordion-icon {
-  transform: rotate(45deg);
-}
-
-.accordion-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: 0;
-  color: #fff;
-  letter-spacing: 0.5px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-}
-
 .accordion-icon {
   font-size: 1.5rem;
   font-weight: 700;
-  transition: all 0.3s ease;
+  transition: var(--transition-base);
   color: #fff;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
+  margin-left: 0.9375rem;
+  flex-shrink: 0;
 }
 
 .accordion-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  background: transparent;
+  transition: max-height var(--transition-base);
+  background: rgba(30, 30, 50, 0.8);
 }
 
 .accordion-body {
+  padding: 1.5625rem 1.875rem;
   padding: 30px;
 }
 
@@ -353,6 +389,7 @@ main {
   transform: scale(1.1);
   box-shadow: 0 4px 12px rgba(111, 0, 255, 0.4);
 }
+
 /* Footer Styles */
 .logoImgFooter {
   height: 150px;
@@ -365,7 +402,6 @@ main {
   transform: scale(1.05);
   filter: drop-shadow(0 4px 8px rgba(157, 78, 221, 0.4));
 }
-
 
 .item-text {
   color: #f0f0f0;
@@ -464,10 +500,18 @@ main {
     transform: scale(1.05);
   }
 
-  /* Estilos para la sección de noticias */
+  /* ===== Sección de Noticias ===== */
   .news-section {
+    --news-padding-y: 3.75rem; /* 60px */
+    --news-padding-x: 0;
+    --card-max-width: 75rem; /* 1200px */
+    --card-padding: 1.875rem; /* 30px */
+    --card-padding-lg: 4.375rem; /* 70px */
+    --image-height: 28.125rem; /* 450px */
+    --image-height-sm: 18.75rem; /* 300px */
+    
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    padding: 60px 0 80px;
+    padding: var(--news-padding-y) var(--news-padding-x);
     position: relative;
     color: var(--text-light);
     border-top: 3px solid transparent;
@@ -485,86 +529,117 @@ main {
     background: var(--primary-gradient);
   }
 
-  /* Estilo mejorado para la tarjeta de noticias */
+  /* Tarjeta de Noticias */
   .news-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 10px;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --card-border: 1px solid rgba(255, 255, 255, 0.1);
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --card-hover-shadow: 0 8px 30px rgba(111, 0, 255, 0.3);
+    
+    background: var(--card-bg);
+    border-radius: 0.625rem;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: all 0.4s ease;
-    max-width: 1200px;
+    transition: var(--transition-base);
+    max-width: var(--card-max-width);
     width: 95%;
-    margin: 30px auto;
+    margin: 1.875rem auto;
     position: relative;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: var(--card-border);
+    will-change: transform, box-shadow;
   }
 
   .news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(111, 0, 255, 0.3);
+    transform: translateY(-0.3125rem);
+    box-shadow: var(--card-hover-shadow);
     border-color: rgba(157, 78, 221, 0.3);
   }
 
   .news-image-container {
     position: relative;
     overflow: hidden;
-    height: 450px;
+    height: var(--image-height);
+    aspect-ratio: 16/9;
   }
   
-  @media (max-width: 768px) {
-    .news-image-container {
-      height: 300px;
-    }
-  }
-
   .news-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform var(--transition-base);
+    will-change: transform;
   }
 
-  /* Estilos para modificar el texto de la tarjeta de noticias */
+  /* Contenido de la tarjeta */
+  .news-content {
+    padding: var(--card-padding);
+  }
+  
   .news-content h3 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     line-height: 1.3;
+    color: #fff;
   }
 
   .news-content p {
-    margin-bottom: 10px;
+    margin-bottom: 0.625rem;
     font-size: 1.2rem;
-    line-height: 1.3;
-    color: white ;
+    line-height: 1.5;
+    color: #f0f0f0;
   }
-
-  /* Aqui acaba: Estilos para modificar el texto de la tarjeta de noticias */
 
   .news-date {
+    --date-bg: rgba(255, 0, 255, 0.9);
+    --date-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    
     position: absolute;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 0, 255, 0.9);
+    top: 1.25rem;
+    right: 1.25rem;
+    background: var(--date-bg);
     color: white;
-    padding: 8px 16px;
-    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    border-radius: 1.25rem;
     font-size: 0.9rem;
     font-weight: 600;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  }
-
-  .news-content {
-    padding: 30px;
+    box-shadow: var(--date-shadow);
+    z-index: 1;
   }
   
-  @media (min-width: 768px) {
+  /* Media Queries */
+  @media (max-width: 62rem) {
+    .news-card {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 48rem) {
+    .news-image-container {
+      height: var(--image-height-sm);
+    }
+    
     .news-content {
-      padding: 50px 70px;
+      padding: 1.5rem;
+    }
+    
+    .news-content h3 {
+      font-size: 1.3rem;
+    }
+    
+    .news-content p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (min-width: 48rem) {
+    .news-content {
+      padding: var(--card-padding-lg);
     }
   }
 
+  /* Estilos del botón Leer más */
   .read-more {
     display: inline-flex;
     align-items: center;
@@ -572,7 +647,7 @@ main {
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-size: 1rem; /* Reducido de 1.3rem */
+    font-size: 1rem;
     margin-top: 10px;
     padding: 6px 16px;
     border: 2px solid #ff00f750;
@@ -588,6 +663,7 @@ main {
     margin-left: 8px;
     transition: transform 0.3s ease;
   }
+  
   .read-more:hover .arrow {
     transform: translateX(5px);
   }
