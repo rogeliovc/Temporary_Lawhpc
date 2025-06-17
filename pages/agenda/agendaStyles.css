@@ -92,20 +92,45 @@
 
 /* Tarjeta de evento */
 .eventCard {
-    background: #1a1a1a;
-    border-radius: 12px;
+    background: rgba(26, 26, 26, 0.7);
+    border-radius: 16px;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     height: 100%;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transform-style: preserve-3d;
+    animation: cardAppear 0.6s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px) rotateX(10deg);
 }
 
 .eventCard:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px) scale(1.5);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(74, 144, 226, 0.3);
 }
+
+@keyframes cardAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px) rotateX(10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0);
+    }
+}
+
+/* Aplicar animación escalonada a las tarjetas */
+.eventCard:nth-child(1) { animation-delay: 0.1s; }
+.eventCard:nth-child(2) { animation-delay: 0.2s; }
+.eventCard:nth-child(3) { animation-delay: 0.3s; }
+.eventCard:nth-child(4) { animation-delay: 0.4s; }
 
 .eventImage {
     width: 100%;
@@ -145,25 +170,60 @@
     flex-grow: 1;
 }
 
+/* Estilo para el botón de más información */
 .eventLink {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 20px;
-    background: #2c3e50;
-    color: #fff;
+    padding: 0.8rem 1.8rem;
+    background: linear-gradient(135deg, #4a90e2, #8e44ad);
+    color: white;
     text-decoration: none;
-    border-radius: 6px;
-    font-size: 1em;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    margin-top: 1.5rem;
     align-self: flex-start;
-    margin-top: auto;
+}
+
+.eventLink::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #8e44ad, #4a90e2);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    z-index: 1;
+}
+
+.eventLink span {
+    position: relative;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .eventLink:hover {
-    background: #1a252f;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(74, 144, 226, 0.4);
+}
+
+.eventLink:hover::before {
+    opacity: 1;
+}
+
+.eventLink:active {
+    transform: translateY(0) scale(0.98);
 }
 
 
