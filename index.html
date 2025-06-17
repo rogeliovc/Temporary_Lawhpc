@@ -19,6 +19,18 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lawhpc.org/">
     <meta property="og:title" content="LAWHPC - Latin American Women in High Performance Computing">
+    <meta property="og:image" content="https://lawhpc.org/pages/homePage/assets/optimized/banner.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Mujeres en tecnología y computación de alto rendimiento">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LAWHPC - Latin American Women in High Performance Computing">
+    <meta name="twitter:description" content="Promoviendo la participación de mujeres en HPC en América Latina">
+    <meta name="twitter:image" content="https://lawhpc.org/pages/homePage/assets/optimized/banner.webp">
+    <meta name="twitter:image:alt" content="Mujeres en tecnología y computación de alto rendimiento">
     <meta property="og:description" content="Promoviendo la participación de mujeres en HPC en América Latina">
     <meta property="og:image" content="https://lawhpc.org/assets/images/og-image.jpg">
 
@@ -70,15 +82,37 @@
     </div>
 
     <div class="banner">
-      <img 
-        src="/pages/homePage/assets/optimized/banner.webp" 
-        alt="Latin American Women in HPC" 
-        class="bannerImg" 
-        loading="eager" 
-        width="1920" 
-        height="600" 
-        decoding="async"
-      >
+      <picture>
+        <!-- Formatos modernos con WebP -->
+        <source 
+          type="image/webp" 
+          srcset=
+            "/pages/homePage/assets/optimized/banner-sm.webp 640w,
+             /pages/homePage/assets/optimized/banner-md.webp 768w,
+             /pages/homePage/assets/optimized/banner-lg.webp 1024w,
+             /pages/homePage/assets/optimized/banner-xl.webp 1280w,
+             /pages/homePage/assets/optimized/banner.webp 1920w"
+          sizes="100vw"
+        >
+        <!-- Fallback para navegadores antiguos -->
+        <source 
+          type="image/jpeg" 
+          srcset=
+            "/pages/homePage/assets/banner.png 1920w"
+          sizes="100vw"
+        >
+        <!-- Imagen de respaldo -->
+        <img 
+          src="/pages/homePage/assets/optimized/banner.webp" 
+          alt="Mujeres latinoamericanas en computación de alto rendimiento trabajando en tecnología" 
+          class="bannerImg" 
+          loading="eager" 
+          width="1920" 
+          height="600" 
+          decoding="async"
+          fetchpriority="high"
+        >
+      </picture>
     </div>
 
     <main>
@@ -208,19 +242,26 @@ Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equid
             <!-- Imagen 1 -->
             <div class="image-container mission-image-container">
               <picture>
+                <!-- Formatos modernos con WebP -->
                 <source 
-                  type="image/webp"
-                  srcset="/pages/homePage/assets/optimized/WiHPC_img.01-sm.webp 320w,
-                          /pages/homePage/assets/optimized/WiHPC_img.01-md.webp 480w,
-                          /pages/homePage/assets/optimized/WiHPC_img.01.webp 640w"
-                  sizes="(max-width: 480px) 90vw,
-                         (max-width: 768px) 45vw,
-                         400px">
+                  type="image/webp" 
+                  srcset=
+                    "/pages/homePage/assets/optimized/WiHPC_img.04-sm.webp 320w,
+                     /pages/homePage/assets/optimized/WiHPC_img.04-md.webp 480w,
+                     /pages/homePage/assets/optimized/WiHPC_img.04-lg.webp 640w,
+                     /pages/homePage/assets/optimized/WiHPC_img.04-xl.webp 800w"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                >
+                <!-- Imagen de respaldo -->
                 <img 
-                  src="/pages/homePage/assets/optimized/WiHPC_img.01.webp" 
-                  alt="Mujeres en tecnología trabajando juntas" 
+                  src="/pages/homePage/assets/optimized/WiHPC_img.04.webp" 
+                  alt="Taller de capacitación en computación de alto rendimiento para mujeres" 
+                  class="mission-image" 
                   loading="lazy" 
-                  width="400" 
+                  width="600" 
+                  height="400"
+                  decoding="async"
+                >
                   height="300" 
                   decoding="async" />
               </picture>
@@ -310,6 +351,24 @@ Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equid
 
     <!-- Footer dinamico con js -->
     <div id="footerContainer"></div>
+    <!-- Scripts con carga diferida -->
+    <script>
+      // Cargar scripts no críticos de forma asíncrona
+      function loadScript(src, callback) {
+        var script = document.createElement('script');
+        script.src = src;
+        script.async = true;
+        script.defer = true;
+        if (callback) script.onload = callback;
+        document.body.appendChild(script);
+      }
+      
+      // Cargar scripts no críticos después de la carga de la página
+      window.addEventListener('load', function() {
+        loadScript('/js/accordion.js');
+        loadScript('/js/main.js');
+      });
+    </script>
     <!-- Scripts al final del body para mejor rendimiento -->
     <script src="/js/loadComponents.js"></script>
     <script src="/js/main.js" defer></script>
