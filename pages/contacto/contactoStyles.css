@@ -2,12 +2,25 @@
   position: fixed; /* o absolute si el body está en relative */
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, #8e44ad55);
+  background: radial-gradient(circle, #9d4edd, #6f00ff, transparent 50%);
   border-radius: 50%;
   filter: blur(80px);
   z-index: -10; /* muy por detrás del contenido */
   pointer-events: none; /* no interfiere con el mouse */
   opacity: 0.7;
+}
+
+.contactSection h1::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #9d4edd, #6f00ff);
+  transition: width 0.3s ease;
+}
+
+.contactSection h1:hover::after {
+  width: 120px; /* aquí se expande cuando haces hover */
 }
 
 .contactSection {
@@ -23,6 +36,9 @@
   text-align: center;
   position: relative;
   padding-bottom: 1rem;
+  width: fit-content;
+  justify-self: center;
+  margin: 2rem auto;
 }
 
 .contactSection h1::after {
@@ -50,7 +66,7 @@
 .contactForm {
   max-width: 700px;
   margin: 0 auto;
-  padding: 5px;
+  padding: 3px;
   background: rgba(13, 13, 13, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -68,7 +84,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(to right, #4a90e2, #8e44ad);
+  background: linear-gradient(90deg, #6f00ff, #9d4edd);
   border-radius: 12px;
   padding: 0;
   margin: 0;
@@ -78,7 +94,7 @@
 .contactForm:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  border-color: rgba(74, 144, 226, 0.3);
+  border-color: #6f00ff;
 }
 
 .formContainer {
@@ -95,7 +111,7 @@
 }
 
 .formGroup {
-  margin-bottom: 1.8rem;
+  margin-bottom: 0.5rem;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -162,7 +178,7 @@ input[type="email"]:focus,
 textarea:focus {
   border-color: #4a90e2;
   outline: none;
-  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3);
+  box-shadow: 0 0 0 2px #9d4edd;
   transform: translateY(-1px);
 }
 
@@ -190,11 +206,7 @@ button[type="submit"] {
   max-width: 200px;
   margin: 2.5rem auto 0;
   padding: 0.9rem 2rem;
-  background: linear-gradient(
-    90deg,
-    rgba(74, 144, 226, 0.9),
-    rgba(142, 68, 173, 0.9)
-  );
+  background: linear-gradient(90deg, #6f00ff, #9d4edd);
   color: white;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
@@ -222,7 +234,7 @@ button[type="submit"]::before {
   left: 0;
   width: 0;
   height: 100%;
-  background: linear-gradient(90deg, #8e44ad, #4a90e2);
+  background: linear-gradient(90deg, #9d4edd, #6f00ff);
   transition: width 0.3s ease;
   z-index: -1;
 }
@@ -257,7 +269,7 @@ button[type="submit"]:hover::before {
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -265,7 +277,7 @@ button[type="submit"]:hover::before {
 .contactInfo:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-  border-color: rgba(74, 144, 226, 0.3);
+  border-color: #6f00ff;
 }
 
 .contactInfo h3 {
@@ -311,7 +323,7 @@ button[type="submit"]:hover::before {
   }
 
   .contactForm {
-    padding: 1.5rem;
+    padding: 2px;
   }
 
   .contactSection h1 {
@@ -334,7 +346,7 @@ button[type="submit"]:hover::before {
   }
 
   .contactForm {
-    padding: 1.5rem 1.25rem;
+    padding: 2px;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
   }
