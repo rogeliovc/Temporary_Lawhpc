@@ -1,12 +1,24 @@
-/* Estilos para la página de noticias */
-.news-page {
-  min-height: 100vh;
+/* Estilos base para la página de noticias */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f0c29;
   background: linear-gradient(135deg, #0f0c29 0%, #1a1a2e 50%, #24243e 100%);
   color: #fff;
-  position: relative;
-  padding: 100px 20px 60px;
+  line-height: 1.6;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   overflow-x: hidden;
-  transform: translateZ(0); /* Forzar capa de composición */
+}
+
+.news-page {
+  min-height: 100vh;
+  padding: 100px 20px 60px;
+  position: relative;
+  z-index: 1;
 }
 
 .news-page::before {
@@ -20,7 +32,7 @@
     radial-gradient(circle at 20% 30%, rgba(111, 0, 255, 0.15) 0%, transparent 25%),
     radial-gradient(circle at 80% 70%, rgba(111, 0, 255, 0.15) 0%, transparent 25%);
   pointer-events: none;
-  z-index: 0;
+  z-index: -1;
 }
 
 /* Overlay para el fondo oscuro */
@@ -98,6 +110,27 @@
   box-shadow: 0 15px 50px rgba(255, 0, 255, 0.3);
   overflow-y: auto;
   cursor: default;
+  /* Asegurar que la tarjeta no se salga de la pantalla */
+  max-height: min(90vh, calc(100vh - 40px));
+  margin: 20px 0;
+  /* Mejorar el desplazamiento */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  /* Asegurar que el contenido no se desborde */
+  overscroll-behavior: contain;
+  /* Posicionamiento seguro para móviles */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 90%;
+  height: fit-content;
+  max-height: 90vh;
+  transform: none;
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .news-card:not(.expanded):hover {
@@ -113,7 +146,8 @@
 }
 
 .news-card.expanded .news-image-container {
-  height: 350px;
+  height: 300px;
+  max-height: 40vh;
 }
 
 .news-image {
@@ -197,28 +231,7 @@
   transform: translateX(5px);
 }
 
-/* Estilos para el contenedor principal */
-.news-page {
-  background: linear-gradient(135deg, #0f0c29 0%, #1a1a2e 50%, #24243e 100%);
-  min-height: 100vh;
-  padding: 100px 20px 60px;
-  position: relative;
-  overflow-x: hidden;
-}
-
-.news-page::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(111, 0, 255, 0.15) 0%, transparent 25%),
-    radial-gradient(circle at 80% 70%, rgba(111, 0, 255, 0.15) 0%, transparent 25%);
-  pointer-events: none;
-  z-index: 0;
-}
+/* Estilos para el contenedor principal - Eliminando duplicados */
 
 /* Contenedor de noticias */
 .news-container {
