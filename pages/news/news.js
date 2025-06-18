@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const newsPage = document.querySelector('.news-page');
     const newsCards = document.querySelectorAll('.news-card');
+    const newsOverlay = document.querySelector('.news-overlay');
     let scrollPosition = 0;
     let isExpanded = false;
 
@@ -15,6 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.style.scrollBehavior = '';
             newsPage.classList.remove('has-expanded-card');
             isExpanded = false;
+            
+            // Forzar reflow para asegurar que las transiciones funcionen
+            void newsPage.offsetHeight;
         }
     }
 
@@ -44,6 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
     newsCards.forEach(card => {
         card.addEventListener('click', (e) => handleCardClick(card, e));
     });
+    
+    // Cerrar al hacer clic en el overlay
+    if (newsOverlay) {
+        newsOverlay.addEventListener('click', (e) => {
+            if (isExpanded) {
+                e.stopPropagation();
+                closeExpandedCard();
+            }
+        });
+    }
 
     // Cerrar al hacer clic fuera
     document.addEventListener('click', (e) => {
