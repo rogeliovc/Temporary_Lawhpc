@@ -67,18 +67,6 @@
   <body>
     <!-- Header dinámico con js -->
     <div id="headerContainer">
-      <noscript>
-        <header class="no-js-header">
-          <h1>LAWHPC - Latin American Women in High Performance Computing</h1>
-          <nav>
-            <a href="/">Inicio</a>
-            <a href="/pages/integrantes">Integrantes</a>
-            <a href="/pages/agenda">Agenda</a>
-            <a href="/pages/noticias">Noticias</a>
-            <a href="/pages/contacto">Contacto</a>
-          </nav>
-        </header>
-      </noscript>
     </div>
 
     <div class="banner">
@@ -126,13 +114,53 @@
 Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equidad de género y fomentar la excelencia científica y tecnológica a través de redes colaborativas, mentorías, formación y visibilidad internacional en todos los ámbitos de la supercomputación..
           </p>
         </div>
-        <div class="seeMore">
-            <button class="seeMoreBtn">Ver más </button>
+        <div class="mission-logos">
+          <!-- Logo 1 -->
+          <div class="logo-container">
+            <img 
+              src="/pages/homePage/assets/logos/logo.webp" 
+              alt="Logo LA-WHPC" 
+              class="mission-logo"
+              loading="lazy"
+              width="200"
+              height="auto"
+              decoding="async">
+          </div>
+          
+          <!-- Logo 2 -->
+          <div class="logo-container">
+            <img 
+              src="/pages/homePage/assets/logos/Logo_RedClara.png" 
+              alt="Logo RedClara" 
+              class="mission-logo"
+              loading="lazy"
+              width="200"
+              height="auto"
+              decoding="async">
+          </div>
+          
+          <!-- Logo 3 -->
+          <div class="logo-container">
+            <img 
+              src="/pages/homePage/assets/logos/Logo_scalac.png" 
+              alt="Logo SCALAC" 
+              class="mission-logo"
+              loading="lazy"
+              width="200"
+              height="auto"
+              decoding="async">
+          </div>
+        </div>
+        
+        <div class="seeMoreBtnContainer">
+          <a href="https://sites.google.com/view/la-whpc/inicio" target="_blank" rel="noopener noreferrer" aria-label="Ver más sobre LA-WHPC" title="Ver más sobre LA-WHPC" >
+            <button class="seeMoreBtn">VER MÁS </button>
+          </a>
         </div>
       </section>
 
-      <section class="missionAndNews">
-        <div class="container">
+      <section class="objectiveSection">
+        <div class="containerObjectiveSection">
           <div class="section-header">
             <h2>Objetivo General</h2>
           </div>
@@ -237,79 +265,6 @@ Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equid
       gtag('js', new Date());
       gtag('config', 'G-XXXXXXXXXX');
     </script>
-
-          <div class="missionImages">
-            <!-- Imagen 1 -->
-            <div class="image-container mission-image-container">
-              <picture>
-                <!-- Formatos modernos con WebP -->
-                <source 
-                  type="image/webp" 
-                  srcset=
-                    "/pages/homePage/assets/optimized/WiHPC_img.04-sm.webp 320w,
-                     /pages/homePage/assets/optimized/WiHPC_img.04-md.webp 480w,
-                     /pages/homePage/assets/optimized/WiHPC_img.04-lg.webp 640w,
-                     /pages/homePage/assets/optimized/WiHPC_img.04-xl.webp 800w"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                >
-                <!-- Imagen de respaldo -->
-                <img 
-                  src="/pages/homePage/assets/optimized/WiHPC_img.04.webp" 
-                  alt="Taller de capacitación en computación de alto rendimiento para mujeres" 
-                  class="mission-image" 
-                  loading="lazy" 
-                  width="600" 
-                  height="400"
-                  decoding="async"
-                >
-                  height="300" 
-                  decoding="async" />
-              </picture>
-            </div>
-            
-            <!-- Imagen 2 -->
-            <div class="image-container mission-image-container">
-              <picture>
-                <source 
-                  type="image/webp"
-                  srcset="/pages/homePage/assets/optimized/WiHPC_img.02-sm.webp 320w,
-                          /pages/homePage/assets/optimized/WiHPC_img.02-md.webp 480w,
-                          /pages/homePage/assets/optimized/WiHPC_img.02.webp 640w"
-                  sizes="(max-width: 480px) 90vw,
-                         (max-width: 768px) 45vw,
-                         400px">
-                <img 
-                  src="/pages/homePage/assets/optimized/WiHPC_img.02.webp" 
-                  alt="Grupo diverso de profesionales en computación" 
-                  loading="lazy" 
-                  width="400" 
-                  height="300" 
-                  decoding="async" />
-              </picture>
-            </div>
-            
-            <!-- Imagen 3 -->
-            <div class="image-container mission-image-container">
-              <picture>
-                <source 
-                  type="image/webp"
-                  srcset="/pages/homePage/assets/optimized/WiHPC_img.03-sm.webp 320w,
-                          /pages/homePage/assets/optimized/WiHPC_img.03-md.webp 480w,
-                          /pages/homePage/assets/optimized/WiHPC_img.03.webp 640w"
-                  sizes="(max-width: 480px) 90vw,
-                         (max-width: 768px) 45vw,
-                         400px">
-                <img 
-                  src="/pages/homePage/assets/optimized/WiHPC_img.03.webp" 
-                  alt="Participantes en conferencia de tecnología" 
-                  loading="lazy" 
-                  width="400" 
-                  height="300" 
-                  decoding="async" />
-              </picture>
-            </div>
-          </div>
-        </div>
       </section>
 
       <section class="news-section">

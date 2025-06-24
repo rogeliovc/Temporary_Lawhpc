@@ -1,107 +1,17 @@
 /* ===== Estilos del Banner ===== */
 .banner {
   width: 100%;
-  margin: -100px 0 0;
-  padding: 0;
-  max-height: 80vh;
-  overflow: hidden;
+  margin-top: -100px;
   position: relative;
-  aspect-ratio: 16/6;
 }
 
 .bannerImg {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
-  object-position: center;
-  display: block;
 }
 
-/* Navegación sin JavaScript */
-.no-js-header {
-  background: #1a1a2e;
-  padding: 1rem;
-  text-align: center;
-  display: none; /* Oculto por defecto, se muestra solo si hay error en JS */
-}
-
-.no-js-header h1 {
-  color: white;
-  font-size: 1.5rem;
-  margin: 0 0 1rem 0;
-}
-
-.no-js-header nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.no-js-header a {
-  color: #e0e0e0;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.2s ease;
-}
-
-.no-js-header a:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-}
-
-/* ===== Contenedores y Layout ===== */
-:root {
-  --container-max-width: 1200px;
-  --container-padding: 20px;
-  --transition-base: 0.3s ease;
-}
-
-.container {
-  max-width: var(--container-max-width);
-  margin: 0 auto;
-  padding: 40px var(--container-padding);
-  position: relative;
-}
-
-main {
-  min-height: 100vh;
-  overflow: hidden;
-}
-
-/* ===== Componentes Reutilizables ===== */
-.image-container {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  margin-bottom: 1.5rem;
-  aspect-ratio: 4/3;
-}
-
-/* Contenedor de imágenes de misión */
-.mission-image-container {
-  max-width: 400px;
-  margin: 0 auto;
-}
-
-/* Estilos para imágenes dentro de contenedores */
-.image-container img,
-.mission-image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-  display: block;
-}
-
-.image-container:hover img,
-.mission-image-container:hover img {
-  transform: scale(1.05);
-}
-
-/* ===== Encabezados ===== */
+/* ===== Estilos de Encabezados ===== */
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -117,28 +27,24 @@ main {
   letter-spacing: 1.5px;
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  padding-bottom: 1rem;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #6f00ff, #9d4edd);
+    border-radius: 4px;
+  }
 }
 
-.section-header h2::after {
-  content: '';
-  position: absolute;
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #6f00ff, #9d4edd);
-  bottom: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 4px;
-  transition: all 0.3s ease;
-}
-
-.section-header h2:hover::after {
-  width: 120px;
-  background: linear-gradient(90deg, #9d4edd, #6f00ff);
-}
-
-/* ===== Tipografía ===== */
-.container p {
+/* ===== Tipografía y acomodo de los textos ===== */
+.container p,
+.containerObjectiveSection p {
   font-size: 1.2rem;
   line-height: 1.8;
   color: #f0f0f0;
@@ -149,7 +55,7 @@ main {
   margin-right: auto;
 }
 
-/* ===== Secciones ===== */
+/* ===== Estilos de las Secciones ===== */
 .aboutSection,
 .missionAndNews,
 .news-section {
@@ -158,107 +64,39 @@ main {
   overflow: hidden;
 }
 
+/* ===== Sección About us ===== */
 .aboutSection {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
 }
 
-.missionAndNews {
-  background: linear-gradient(135deg, #0f0c29 0%, #302b63 100%);
-}
-
-.news-section {
-  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-}
-
-/* ===== Botones ===== */
-:root {
-  --btn-padding: 0.875rem 2.1875rem;
-  --btn-radius: 30px;
-  --btn-shadow: 0 4px 15px rgba(111, 0, 255, 0.3);
-  --btn-hover-shadow: 0 8px 25px rgba(111, 0, 255, 0.4);
-  --btn-gradient: linear-gradient(45deg, #6f00ff, #9d4edd);
-  --btn-hover-gradient: linear-gradient(45deg, #7a1aff, #a94ee0);
-}
-
-.seeMore {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 1.25rem;
+/* ===== Boton About us ===== */
+.seeMoreBtnContainer {
+  text-align: center;
 }
 
 .seeMoreBtn {
-  background: var(--btn-gradient);
+  background: #6f00ff;
   color: white;
+  padding: 0.8rem 2rem;
   border: none;
-  padding: var(--btn-padding);
-  border-radius: var(--btn-radius);
-  cursor: pointer;
-  transition: var(--transition-base);
-  font-size: 1.1em;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  box-shadow: var(--btn-shadow);
-  text-decoration: none;
-  text-align: center;
-  display: inline-block;
+  border-radius: 15px;
+  font-size: 1.1rem;
 }
 
 .seeMoreBtn:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--btn-hover-shadow);
-  background: var(--btn-hover-gradient);
+  background: #9d4edd;
+  transform: translateY(-2px);
 }
 
-.seeMoreBtn:active {
-  transform: translateY(1px);
-  box-shadow: 0 2px 10px rgba(111, 0, 255, 0.3);
-}
 
-.seeMoreBtn:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(111, 0, 255, 0.3);
-}
-
-.seeMoreBtn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--btn-hover-gradient);
-  transition: var(--transition-base);
-  z-index: -1;
-}
-
-.seeMoreBtn:hover::before {
-  left: 0;
-}
-  
-/* Mission and News Section */
-.missionAndNews {
+/* ===== objetiveSection ===== */
+.objectiveSection {
   position: relative;
   padding: 80px 0;
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-  color: var(--text-light);
 }
 
-.missionAndNews::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #6f00ff, #9d4edd);
-}
-
-.missionAndNews .container {
+.objectiveSection .containerObjectiveSection {
   background-color: transparent;
   color: #fff;
   border-radius: 12px;
@@ -390,19 +228,6 @@ main {
   box-shadow: 0 4px 12px rgba(111, 0, 255, 0.4);
 }
 
-/* Footer Styles */
-.logoImgFooter {
-  height: 150px;
-  width: auto;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
-}
-
-.logoImgFooter:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 4px 8px rgba(157, 78, 221, 0.4));
-}
-
 .item-text {
   color: #f0f0f0;
   line-height: 1.7;
@@ -463,45 +288,96 @@ main {
   }
 }
 
-/* Estilos para las imágenes de la sección Misión */
-.missionImages {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-  padding-top: 3rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  justify-items: center;
+/* ===== Estilos para la sección de logos ===== */
+.mission-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 3rem 0;
+  padding: 2rem 0;
+  background: linear-gradient(135deg, rgba(111, 0, 255, 0.03) 0%, rgba(157, 78, 221, 0.05) 100%);
+  border-radius: 16px;
+  border: 1px solid rgba(111, 0, 255, 0.1);
 }
-  
-  .mission-image-container {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .mission-image-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  }
-  
-  .mission-image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.4s ease;
-  }
-  
-  .mission-image-container:hover img {
-    transform: scale(1.05);
-  }
 
-  /* ===== Sección de Noticias ===== */
-  .news-section {
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 200px;
+  height: 150px;
+  padding: 1.5rem;
+  background: white;
+  box-shadow: 0 4px 15px rgba(111, 0, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.logo-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(111, 0, 255, 0) 0%, rgba(111, 0, 255, 0.02) 100%);
+  z-index: 1;
+  transition: all 0.4s ease;
+}
+
+.logo-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(111, 0, 255, 0.15);
+}
+
+.logo-container:hover::before {
+  background: linear-gradient(135deg, rgba(111, 0, 255, 0.03) 0%, rgba(157, 78, 221, 0.05) 100%);
+}
+
+.mission-logo {
+  max-width: 80%;
+  max-height: 80%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) contrast(0.9) brightness(0.9);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.logo-container:hover .mission-logo {
+  filter: grayscale(0%) contrast(1) brightness(1);
+  transform: scale(1.05);
+}
+
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  .mission-logos {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .logo-container {
+    width: 80%;
+    max-width: 250px;
+    height: 120px;
+  }
+  
+  .seeMoreBtn {
+    width: 90%;
+    max-width: 300px;
+    padding: 0.8rem;
+  }
+}
+
+/* ===== Sección de Noticias ===== */
+.news-section {
     --news-padding-y: 3.75rem; /* 60px */
     --news-padding-x: 0;
     --card-max-width: 75rem; /* 1200px */
@@ -741,5 +617,3 @@ main {
     padding: 0 20px;
   }
 }
-
-/* End of responsive styles */
