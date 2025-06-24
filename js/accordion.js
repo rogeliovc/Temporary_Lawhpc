@@ -4,7 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
-  const accordionHeaders = document.querySelectorAll('.accordion-header');
+  const accordionHeaders = document.querySelectorAll('.accordionHeader');
   
   if (accordionHeaders.length > 0) {
     // Inicializar acordeones

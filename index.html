@@ -114,9 +114,9 @@
 Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equidad de género y fomentar la excelencia científica y tecnológica a través de redes colaborativas, mentorías, formación y visibilidad internacional en todos los ámbitos de la supercomputación..
           </p>
         </div>
-        <div class="mission-logos">
+        <div class="logosContainer">
           <!-- Logo 1 -->
-          <div class="logo-container">
+          <div class="imageLogoContainer">
             <img 
               src="/pages/homePage/assets/logos/logo.webp" 
               alt="Logo LA-WHPC" 
@@ -128,7 +128,7 @@ Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equid
           </div>
           
           <!-- Logo 2 -->
-          <div class="logo-container">
+          <div class="imageLogoContainer">
             <img 
               src="/pages/homePage/assets/logos/Logo_RedClara.png" 
               alt="Logo RedClara" 
@@ -140,7 +140,7 @@ Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equid
           </div>
           
           <!-- Logo 3 -->
-          <div class="logo-container">
+          <div class="imageLogoContainer">
             <img 
               src="/pages/homePage/assets/logos/Logo_scalac.png" 
               alt="Logo SCALAC" 
@@ -151,7 +151,6 @@ Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equid
               decoding="async">
           </div>
         </div>
-        
         <div class="seeMoreBtnContainer">
           <a href="https://sites.google.com/view/la-whpc/inicio" target="_blank" rel="noopener noreferrer" aria-label="Ver más sobre LA-WHPC" title="Ver más sobre LA-WHPC" >
             <button class="seeMoreBtn">VER MÁS </button>
@@ -168,14 +167,14 @@ Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equid
             Fortalecer la presencia, liderazgo y desarrollo profesional de las mujeres en el ámbito de la computación de alto rendimiento en América Latina, desde la investigación básica hasta las aplicaciones de frontera promoviendo una comunidad inclusiva, colaborativa y orientada a la innovación científica y tecnológica con impacto regional y global.
           </p>
 
-          <div class="accordion-container">
+          <div class="accordionContainer">
             <!-- Objetivos Particulares Accordion -->
             <div class="accordion">
-              <button class="accordion-header" aria-expanded="false" aria-controls="objectives-content">
-                <span class="accordion-title">Objetivos Particulares</span>
-                <span class="accordion-icon">+</span>
+              <button class="accordionHeader" aria-expanded="false" aria-controls="objectives-content">
+                <span>Objetivos Particulares</span>
+                <span>+</span>
               </button>
-              <div id="objectives-content" class="accordion-content">
+              <div id="objectives-content" class="accordionContent">
                 <div class="accordion-body">
                   <div class="list-item">
                     <div class="item-badge">1</div>
@@ -203,9 +202,9 @@ Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equid
 
             <!-- Metas Accordion -->
             <div class="accordion">
-              <button class="accordion-header" aria-expanded="false" aria-controls="goals-content">
-                <span class="accordion-title">Metas</span>
-                <span class="accordion-icon">+</span>
+              <button class="accordionHeader" aria-expanded="false" aria-controls="goals-content">
+                <span>Metas</span>
+                <span>+</span>
               </button>
               <div id="goals-content" class="accordion-content">
                 <div class="accordion-body">
@@ -237,36 +236,7 @@ Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equid
               </div>
             </div>
           </div>
-          
-          <!-- Scripts al final del documento para mejor rendimiento -->
-    <script>
-      // Cargar el header dinámico
-      fetch('/components/header.html')
-        .then(response => {
-          if (!response.ok) throw new Error('No se pudo cargar el header');
-          return response.text();
-        })
-        .then(html => {
-          document.getElementById('headerContainer').innerHTML = html;
-        })
-        .catch(error => {
-          console.error('Error cargando el header:', error);
-          // Mostrar el header de no-JS en caso de error
-          document.querySelector('.no-js-header').style.display = 'block';
-        });
-    </script>
-    <script src="/js/accordion.js" defer></script>
-    
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
-    </script>
       </section>
-
       <section class="news-section">
         <div class="container">
           <div class="section-header">
@@ -328,5 +298,31 @@ Esta iniciativa busca articular esfuerzos interdisciplinarios, promover la equid
     <!-- Scripts al final del body para mejor rendimiento -->
     <script src="/js/loadComponents.js"></script>
     <script src="/js/main.js" defer></script>
+    <script>
+      // Cargar el header dinámico
+      fetch('/components/header.html')
+        .then(response => {
+          if (!response.ok) throw new Error('No se pudo cargar el header');
+          return response.text();
+        })
+        .then(html => {
+          document.getElementById('headerContainer').innerHTML = html;
+        })
+        .catch(error => {
+          console.error('Error cargando el header:', error);
+          // Mostrar el header de no-JS en caso de error
+          document.querySelector('.no-js-header').style.display = 'block';
+        });
+    </script>
+    <script src="/js/accordion.js" defer></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
   </body>
 </html>
