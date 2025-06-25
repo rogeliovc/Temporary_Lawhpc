@@ -27,6 +27,14 @@ ErrorDocument 403 /components/error.html
 ErrorDocument 404 /components/error.html
 ErrorDocument 500 /components/error.html
 
+# Redirigir index.html a inicio
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^/]*/)*index\.html\ HTTP/
+RewriteRule ^(.*)index\.html$ /inicio [R=301,L]
+
+# Redirigir /inicio a la raíz
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/inicio\s [NC]
+RewriteRule ^inicio/?$ / [R=301,L]
+
 # URLs limpias para páginas en subcarpetas
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -36,6 +44,9 @@ RewriteRule ^([a-zA-Z0-9_-]+)/?$ /pages/$1/$1.html [L]
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}\.html -f
 RewriteRule ^(.*)$ $1.html [L]
+
+# Servir index.html cuando se solicite la raíz
+DirectoryIndex index.html
 
 # Configuración de caché para imágenes
 <IfModule mod_expires.c>
