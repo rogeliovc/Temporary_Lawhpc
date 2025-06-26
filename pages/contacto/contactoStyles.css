@@ -44,6 +44,7 @@ body::before {
   opacity: 0.7;
 }
 
+/* ===== Estilos de Encabezados ===== */
 .contactSection h1::after {
   content: "";
   display: block;
@@ -51,10 +52,6 @@ body::before {
   height: 4px;
   background: linear-gradient(90deg, #9d4edd, #6f00ff);
   transition: width 0.3s ease;
-}
-
-.contactSection h1:hover::after {
-  width: 120px; /* aquí se expande cuando haces hover */
 }
 
 .contactSection {
@@ -78,13 +75,13 @@ body::before {
 .contactSection h1::after {
   content: "";
   position: absolute;
-  width: 100px;
+  width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #4a90e2, #8e44ad);
+  background: linear-gradient(90deg, #6f00ff, #9d4edd);
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .contactSection .lead {
@@ -101,34 +98,11 @@ body::before {
   max-width: 700px;
   margin: 0 auto;
   padding: 3px;
-  background: rgba(13, 13, 13, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background: transparent;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.36);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   box-sizing: border-box;
-}
-
-.contactForm::before {
-  content: "";
-  position: absolute;
-  top: 0; /* Ya no necesitas -1px */
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(90deg, #6f00ff, #9d4edd);
-  border-radius: 12px;
-  padding: 0;
-  margin: 0;
-  z-index: -1;
-}
-
-.contactForm:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  border-color: #6f00ff;
 }
 
 .formContainer {
@@ -138,8 +112,8 @@ body::before {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  background: rgba(13, 13, 13, 0.5);
-  border-radius: 10px;
+  background: rgba(26, 26, 46, 0.8);
+  border-radius: 12px;
   margin: 0;
   box-sizing: border-box;
 }
@@ -148,10 +122,6 @@ body::before {
   margin-bottom: 0.5rem;
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.formGroup:hover {
-  transform: translateY(-2px);
 }
 
 label {
@@ -170,8 +140,6 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 8px;
   background: rgba(26, 26, 26, 0.6);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
   color: #fff;
   font-size: 1rem;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -290,64 +258,6 @@ button[type="submit"]:hover::before {
   100% {
     width: 100%;
   }
-}
-
-.contactInfo {
-  margin-top: 4rem;
-  text-align: center;
-  padding: 2.5rem;
-  background: rgba(13, 13, 13, 0.6);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 16px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1.5px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contactInfo:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-  border-color: #6f00ff;
-}
-
-.contactInfo h3 {
-  color: #fff;
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  position: relative;
-  display: inline-block;
-}
-
-.contactInfo h3::after {
-  content: "";
-  position: absolute;
-  width: 60%;
-  height: 3px;
-  background: linear-gradient(90deg, #4a90e2, #8e44ad);
-  bottom: -8px;
-  left: 20%;
-  border-radius: 2px;
-}
-
-.contactInfo p {
-  color: #b3b3b3;
-  font-size: 1.1rem;
-  margin: 1rem 0;
-}
-
-.contactInfo a {
-  color: #4a90e2;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contactInfo a:hover {
-  color: #8e44ad;
-  text-decoration: underline;
 }
 
 /* Responsive Design */
