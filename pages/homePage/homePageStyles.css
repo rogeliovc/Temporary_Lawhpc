@@ -21,12 +21,41 @@ body::before {
   width: 100%;
   margin-top: -100px;
   position: relative;
+  height: 800px;
+  overflow: hidden;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.banner:hover {
+  transform: translateY(-5px);
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(111, 0, 255, 0.1) 0%, rgba(255, 51, 235, 0.1) 100%);
+  z-index: 1;
 }
 
 .bannerImg {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+}
+
+.banner:hover .bannerImg {
+  opacity: 0.9;
 }
 
 /* ===== Estilos de Encabezados ===== */
