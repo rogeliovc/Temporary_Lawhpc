@@ -70,27 +70,15 @@
     </div>
     <div class="banner">
       <picture>
-        <!-- Formatos modernos con WebP -->
+        <!-- Usar WebP si está disponible -->
         <source 
           type="image/webp" 
-          srcset=
-            "/pages/homePage/assets/optimized/banner-sm.webp 640w,
-             /pages/homePage/assets/optimized/banner-md.webp 768w,
-             /pages/homePage/assets/optimized/banner-lg.webp 1024w,
-             /pages/homePage/assets/optimized/banner-xl.webp 1280w,
-             /pages/homePage/assets/optimized/banner.webp 1920w"
+          srcset="/pages/homePage/assets/optimized/banner.webp"
           sizes="100vw"
         >
-        <!-- Fallback para navegadores antiguos -->
-        <source 
-          type="image/jpeg" 
-          srcset=
-            "/pages/homePage/assets/banner.png 1920w"
-          sizes="100vw"
-        >
-        <!-- Imagen de respaldo -->
+        <!-- Imagen de respaldo en PNG -->
         <img 
-          src="/pages/homePage/assets/optimized/banner.webp" 
+          src="/pages/homePage/assets/banner.png" 
           alt="Mujeres latinoamericanas en computación de alto rendimiento trabajando en tecnología" 
           class="bannerImg" 
           loading="eager" 
