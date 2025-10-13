@@ -108,6 +108,101 @@ body::before {
   }
 }
 
+
+/* ===== Estilos del Second Banner ===== */
+.secondBanner {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  margin-top: -50px; /* menor desplazamiento, proporcional */
+  min-height: 200px; /* ajustado a la nueva escala */
+  background-color: #f0f0f0; /* fondo temporal */
+}
+
+.secondBanner:hover {
+  transform: translateY(-3px);
+}
+
+.secondBanner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(111, 0, 255, 0.1) 0%, rgba(255, 51, 235, 0.1) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.secondBanner picture {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.secondBannerImg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: opacity 0.3s ease;
+  background-color: #af2279;
+}
+
+/* ===== Ajustes por tamaño ===== */
+
+/* Pantallas grandes */
+@media (min-width: 1200px) {
+  .secondBanner {
+    height: 25vh;
+    max-height: 350px;
+  }
+}
+
+/* Pantallas medianas */
+@media (max-width: 1199px) and (min-width: 992px) {
+  .secondBanner {
+    height: 22vh;
+  }
+}
+
+/* Tablets */
+@media (max-width: 991px) and (min-width: 768px) {
+  .secondBanner {
+    height: 18vh;
+  }
+}
+
+/* Móviles */
+@media (max-width: 767px) {
+  .secondBanner {
+    height: 15vh;
+    margin-top: 0;
+    border-radius: 0;
+    min-height: 100px;
+  }
+
+  .secondBanner::before {
+    background: linear-gradient(135deg, rgba(111, 0, 255, 0.2) 0%, rgba(255, 51, 235, 0.2) 100%);
+  }
+}
+
+/* Hover solo en dispositivos compatibles */
+@media (hover: hover) {
+  .secondBanner:hover .secondBannerImg {
+    opacity: 0.9;
+  }
+}
+
+
+
+
 /* ===== Estilos de Encabezados ===== */
 .sectionHeader {
   text-align: center;
@@ -165,6 +260,7 @@ body::before {
 .aboutSection {
   position: relative;
   padding: 4rem 1.5rem 3rem;
+  margin-bottom: 3rem;
 }
 
 .aboutSection::after {
